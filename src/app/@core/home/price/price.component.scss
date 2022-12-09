@@ -1,0 +1,46 @@
+.share_us {padding: 80px 0px;
+min-height: 1000px;
+  .btn,
+  p,
+  h5
+ {
+    font-weight: 700;
+  }
+
+
+    .btn {
+
+      border-radius: 164px;
+      padding: 12px 60px;
+
+    }
+    p {
+      svg {
+        margin-left: 10px;
+      }
+
+    }
+
+    .title {
+      justify-content: space-between;
+      align-items: center;
+
+      h5{
+        margin: 0;
+
+        border: 1px solid #f0f0f0;
+        border-radius: 28px;
+        padding: 6px 15px;
+
+        color: #161616;
+        span {
+
+          font-weight: 600;
+
+        }
+      }
+    }
+
+
+  }
+

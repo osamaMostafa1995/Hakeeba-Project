@@ -1,0 +1,29 @@
+.center_create{
+  padding: 80px 0px ;
+  min-height: 1000px;
+
+  img {
+    width: 100%;
+    padding: 0px 50px;
+  }
+  .buttons_steps_create {
+    height: 50px;
+    background: #FFFFFF;
+    border: 0.970037px solid #E8E8E8;
+    border-radius: 97.0037px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .btn{
+      font-size: 14px !important;
+      padding: 6px 4px 6px 20px;
+      height: 34px;
+      background: #E7E2FF;
+border-radius: 23px;
+display: flex;
+align-items: center;
+justify-content: flex-start;  }
+  }
+
+}

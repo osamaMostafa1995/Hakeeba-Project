@@ -1,0 +1,66 @@
+.private-center-information{
+  padding: 80px 0px ;
+  min-height: 1300px;
+
+  img {
+    width: 100%;
+    padding: 0px 50px;
+  }
+  .buttons_steps_create {
+    height: 50px;
+    background: #FFFFFF;
+    border: 0.970037px solid #E8E8E8;
+    border-radius: 97.0037px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+    .btn{
+      font-size: 14px !important;
+      padding: 6px 4px 6px 20px;
+      height: 34px;
+      background: #E7E2FF;
+border-radius: 23px;
+display: flex;
+align-items: center;
+justify-content: flex-start;  }
+  }
+  .center_logo{
+    .input{
+      border: 1px solid #6246EA !important;
+      svg{
+        margin-left: 5px;
+      }
+    }
+  }
+.center_link{
+position: relative;
+    direction: ltr;
+label{
+  direction: rtl;
+}
+.input_link{
+  padding-left: 125px;
+  &::placeholder{
+    font-size: 15px !important;
+  }
+}
+  span{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 105.5%;
+position: absolute;
+left: 20px;
+color: black;
+top:64% !important;
+z-index: 4;
+  }
+}
+textarea{
+  padding-top: 20px !important;
+  min-height: 90px;
+  border-radius: 20px !important;
+}
+}

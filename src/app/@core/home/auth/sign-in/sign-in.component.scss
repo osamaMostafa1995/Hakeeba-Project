@@ -1,0 +1,36 @@
+.sign_in{
+  padding: 200px 0px ;
+  min-height: 1000px;
+ @media (max-width: 992px) and (min-width: 768px){
+  .info_title, .carousel_title {
+      font-size: 19px !important;
+      font-weight: 500 !important;
+      line-height: 105.5% !important;
+      letter-spacing: 0.03em !important;
+  }
+ }
+  .form_info{
+      .form-check{
+          position: relative;
+
+      }
+      .form-check-label{
+
+          right: 20px;
+          position: absolute;
+      }
+      .form-check-input{
+          border: 1px solid #000000;
+          border-radius: 50%;
+          text-align: end !important;
+          position: absolute;
+          right: 0;
+      }
+  }
+  .show_password{
+      position: absolute;
+      left: 30px;
+      top:40%;
+      cursor: pointer;
+  }
+}

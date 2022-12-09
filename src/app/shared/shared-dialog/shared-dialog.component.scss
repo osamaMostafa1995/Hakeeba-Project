@@ -1,0 +1,32 @@
+.choose_sign_in{
+  padding: 20px 10px;
+  .btn{
+    border-radius: 37px;
+    font-weight: 700;
+    font-size: 17px;
+    height:59px ;
+  }
+  .form{
+    .center-btn{
+      transition: .3s;
+      &:hover{
+        background-color: #fff !important;
+border: 1px solid #1CE99F !important;
+color: #1CE99F !important;
+      }
+    }
+    .trainer-btn{
+   transition: .3s;
+   &:hover{
+    background-color: #fff !important;
+    border: 1px solid #6246EA !important;
+    color: #6246ea !important;
+   }
+    }
+  }
+}
+::ng-deep .custom-modalbox {
+  mat-dialog-container {
+    border-radius: 20px !important;
+  }
+}

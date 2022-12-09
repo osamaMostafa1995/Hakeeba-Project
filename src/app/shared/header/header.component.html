@@ -1,0 +1,56 @@
+<app-loader *ngIf="loading"></app-loader>
+<header *ngIf="!loading" class="header" [ngClass]="{'navbar-inverse': isScrolled}">
+  <div class="container">
+    <a [routerLink]="['home']" class="logo" >
+      <!-- <svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M34.4262 6.93949H29.1803V5.36235C29.1838 4.65723 29.042 3.95842 28.7631 3.30632C28.4842 2.65423 28.0738 2.06179 27.5556 1.56319C27.0373 1.06459 26.4215 0.669729 25.7437 0.401432C25.0659 0.133136 24.3395 -0.00328004 23.6066 6.18233e-05H16.3934C15.6625 -0.00333467 14.9383 0.13325 14.2628 0.401856C13.5873 0.670461 12.9741 1.0657 12.459 1.56457C11.4129 2.56751 10.8233 3.92888 10.8197 5.34972V6.92686H5.57377C4.09551 6.92686 2.67782 7.4918 1.63254 8.49742C0.587256 9.50304 0 10.867 0 12.2891V29.6377C0 31.0599 0.587256 32.4238 1.63254 33.4294C2.67782 34.435 4.09551 35 5.57377 35H34.4262C35.9045 35 37.3222 34.435 38.3675 33.4294C39.4128 32.4238 40 31.0599 40 29.6377V12.3018C40 10.8796 39.4128 9.51567 38.3675 8.51005C37.3222 7.50442 35.9045 6.93949 34.4262 6.93949ZM10.8197 31.2275H5.57377C5.13899 31.2275 4.72202 31.0613 4.41458 30.7655C4.10715 30.4698 3.93443 30.0686 3.93443 29.6503V12.3018C3.93443 11.8835 4.10715 11.4823 4.41458 11.1866C4.72202 10.8908 5.13899 10.7246 5.57377 10.7246H10.8197V31.2275ZM14.7541 6.93949V5.36235C14.7541 4.94406 14.9268 4.54291 15.2343 4.24714C15.5417 3.95137 15.9587 3.7852 16.3934 3.7852H23.6066C24.0419 3.7865 24.46 3.94916 24.7738 4.2394C25.0778 4.53986 25.2473 4.94303 25.2459 5.36235V6.93949H14.7541ZM36.0656 29.6503C36.0656 30.0686 35.8929 30.4698 35.5854 30.7655C35.278 31.0613 34.861 31.2275 34.4262 31.2275H29.1803V10.7246H34.4262C34.861 10.7246 35.278 10.8908 35.5854 11.1866C35.8929 11.4823 36.0656 11.8835 36.0656 12.3018V29.6503Z" fill="#6246EA"/>
+        </svg> -->
+        <img [src]="logoImg" alt="">
+    </a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li> <a  [routerLink]="['home']" class="nav-link  " aria-current="page" routerLinkActive="active"  >الرئسية</a></li>
+      <li>  <a class="nav-link text-main" [routerLink]="['Prices']" routerLinkActive="active" >الاسعار</a></li>
+      <li><a class="nav-link" [routerLink]="['blogs']" routerLinkActive="active"  >المدونة</a></li>
+      <li> <a class="nav-link" [routerLink]="['registration']" routerLinkActive="active"  >تسجيل الدخول</a></li>
+      <li class=" btn_box"> <a class="nav-link btn bg-primary" [routerLink]="['create_center']">
+        انشئ مركزك التدريبي
+      </a></li>
+    </ul>
+  </div>
+
+</header>
+<!-- <nav class="navbar navbar-expand-lg   ">
+  <div class="container">
+    <a class="navbar-brand me-0" [routerLink]="['home']">
+      <svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M34.4262 6.93949H29.1803V5.36235C29.1838 4.65723 29.042 3.95842 28.7631 3.30632C28.4842 2.65423 28.0738 2.06179 27.5556 1.56319C27.0373 1.06459 26.4215 0.669729 25.7437 0.401432C25.0659 0.133136 24.3395 -0.00328004 23.6066 6.18233e-05H16.3934C15.6625 -0.00333467 14.9383 0.13325 14.2628 0.401856C13.5873 0.670461 12.9741 1.0657 12.459 1.56457C11.4129 2.56751 10.8233 3.92888 10.8197 5.34972V6.92686H5.57377C4.09551 6.92686 2.67782 7.4918 1.63254 8.49742C0.587256 9.50304 0 10.867 0 12.2891V29.6377C0 31.0599 0.587256 32.4238 1.63254 33.4294C2.67782 34.435 4.09551 35 5.57377 35H34.4262C35.9045 35 37.3222 34.435 38.3675 33.4294C39.4128 32.4238 40 31.0599 40 29.6377V12.3018C40 10.8796 39.4128 9.51567 38.3675 8.51005C37.3222 7.50442 35.9045 6.93949 34.4262 6.93949ZM10.8197 31.2275H5.57377C5.13899 31.2275 4.72202 31.0613 4.41458 30.7655C4.10715 30.4698 3.93443 30.0686 3.93443 29.6503V12.3018C3.93443 11.8835 4.10715 11.4823 4.41458 11.1866C4.72202 10.8908 5.13899 10.7246 5.57377 10.7246H10.8197V31.2275ZM14.7541 6.93949V5.36235C14.7541 4.94406 14.9268 4.54291 15.2343 4.24714C15.5417 3.95137 15.9587 3.7852 16.3934 3.7852H23.6066C24.0419 3.7865 24.46 3.94916 24.7738 4.2394C25.0778 4.53986 25.2473 4.94303 25.2459 5.36235V6.93949H14.7541ZM36.0656 29.6503C36.0656 30.0686 35.8929 30.4698 35.5854 30.7655C35.278 31.0613 34.861 31.2275 34.4262 31.2275H29.1803V10.7246H34.4262C34.861 10.7246 35.278 10.8908 35.5854 11.1866C35.8929 11.4823 36.0656 11.8835 36.0656 12.3018V29.6503Z" fill="#6246EA"/>
+        </svg>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a  [routerLink]="['home']" class="nav-link  " aria-current="page" routerLinkActive="active"  >الرئسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-main" [routerLink]="['Prices']" routerLinkActive="active" >الاسعار</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['blogs']" routerLinkActive="active"  >المدونة</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['registration']" routerLinkActive="active"  >تسجيل الدخول</a>
+        </li>
+        <li class="nav-item btn_box">
+          <a class="nav-link btn bg-primary" [routerLink]="['create_center']">
+            انشئ مركزك التدريبي
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->

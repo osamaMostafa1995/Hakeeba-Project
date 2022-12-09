@@ -1,0 +1,42 @@
+<section class="blogs">
+  <div class="container">
+      <app-main-blog></app-main-blog>
+    <div class="blogs_toggle">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="one-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">اخر المقالات</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="two-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">توعية</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="three-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">تجارب الطلاب</button>
+          </li>
+          <li class="nav-item" role="presentation">
+              <button class="nav-link" id="four-tab" data-bs-toggle="tab" data-bs-target="#four" type="button" role="tab" aria-controls="four" aria-selected="false">قصص ناجحة</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="five-tab" data-bs-toggle="tab" data-bs-target="#five" type="button" role="tab" aria-controls="five" aria-selected="false">شروحات عن المنصة</button>
+            </li>
+
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <app-tab-one></app-tab-one>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <app-tab-two></app-tab-two>
+          </div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              <app-tab-three></app-tab-three>
+          </div>
+          <div class="tab-pane fade" id="four" role="tabpanel" aria-labelledby="four-tab">
+              <app-tab-four></app-tab-four>
+          </div>
+          <div class="tab-pane fade" id="five" role="tabpanel" aria-labelledby="five-tab">
+              <app-tab-five></app-tab-five>
+          </div>
+        </div>
+    </div>
+  </div>
+  </section>

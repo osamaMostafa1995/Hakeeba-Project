@@ -1,1 +1,293 @@
-/* You can add global styles to this file, and also import other style files */
+
+$theme-colors: (
+  "primary": #6246EA,
+  'dark':#341CAA,
+'white':#fff,
+'danger':#e45858,
+'gray': #7A7A7A,
+"gray_dark":#6A6A6A,
+'black':#000,
+'form_input': #F0F0F0,
+'green': #1CE99F,
+'form_color':#959595
+);
+;
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import '~ngx-toastr/toastr';
+@font-face {
+  font-family: "Tajawal";
+  src: local("Tajawal"),
+    url(./assets/fonts/Tajawal-Black.ttf) format("truetype");
+  src: local("Tajawal"), url(./assets/fonts/Tajawal-Bold.ttf) format("truetype");
+  src: local("Tajawal"),
+    url(./assets/fonts/Tajawal-ExtraBold.ttf) format("truetype");
+  src: local("Tajawal"),
+    url(./assets/fonts/Tajawal-ExtraLight.ttf) format("truetype");
+  src: local("Tajawal"),
+    url(./assets/fonts/Tajawal-Light.ttf) format("truetype");
+  src: local("Tajawal"),
+    url(./assets/fonts/Tajawal-Medium.ttf) format("truetype");
+  src: local("Tajawal"),
+    url(./assets/fonts/Tajawal-Regular.ttf) format("truetype");
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.reviews,
+.review {
+  position: relative;
+  .owl-next {
+    font-weight: 700;
+    position: absolute;
+    font-size: 25px !important;
+    border-radius: 50% !important;
+    width: 30px;
+    height: 30px;
+    padding: 0px !important;
+    background-color: #fff !important;
+    transition: .3s;
+    &:hover{
+      background-color: #8446ea !important;
+      }
+      &:hover img{
+        border: 1px solid #8446ea;
+        }
+
+    img {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
+  }
+
+  .owl-prev {
+    position: absolute;
+    font-weight: 700;
+    padding: 0px !important;
+    border-radius: 50% !important;
+    width: 30px;
+    height: 30px;
+    background-color: #fff !important;
+    transition: .3s;
+    &:hover{
+      background-color: #8446ea !important;
+      }
+      &:hover img{
+        border: 1px solid #8446ea;
+        }
+
+    img {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
+  }
+
+  .owl-carousel {
+
+    .owl-stage {
+      display: flex;
+      align-items: center;
+text-align: center;
+
+      .owl-item {
+        opacity: 0.9;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        padding: 20px 10px;
+        margin-left: 6px;
+        border-radius: 13px;
+
+        .logo {
+          margin: auto;
+          border-radius: 50%;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        h6 {
+          font-family: "Poppins";
+          margin-top: 20px;
+          text-align: center !important;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 24px !important;
+          line-height: 105.5%;
+          letter-spacing: -0.065em;
+          color: #000000;
+        }
+
+        p {
+          font-family: "Tajawal";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 171.5% !important;
+          color: #888696;
+          text-align: center;
+          letter-spacing: -0.065em;
+          padding-bottom: 20px;
+        }
+      }
+
+      .center {
+
+        opacity: 1;
+        -webkit-transform: scale(.9);
+        -ms-transform: scale(.9);
+        transform: scale(.9) !important;
+        background: rgba(98, 70, 234, 0.05);
+      }
+    }
+  }
+
+  .owl-carousel .owl-stage-outer {
+    padding-top: 10px;
+    max-height: 320px;
+    margin: 5px;
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: #6246ea;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.reviews {
+  .owl-next {
+    right: -30px;
+    top: 37%;
+  }
+  .owl-prev {
+    left: -31px;
+    top: 37%;
+  }
+
+  .owl-carousel {
+    .owl-stage {
+      .owl-item {
+
+        background: rgba(98, 70, 234, 0.05);
+
+        .logo {
+          width: 50px;
+          height: 50px;
+        }
+
+        h6 {
+          svg {
+            margin-left: 5px;
+          }
+        }
+
+        .btn {
+          font-family: "Tajawal";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 105.5%;
+          align-items: center;
+          color: #ffffff;
+          letter-spacing: -0.065em;
+          padding: 5px 45px;
+          display: inline-block;
+          background: linear-gradient(180deg, #6246ea 0%, #8446ea 100%);
+          border-radius: 31px;
+        }
+      }
+    }
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    width: 23px;
+    position: relative;
+  }
+}
+
+.review {
+  .owl-next {
+left:60%;
+bottom:-5px;
+&:hover{
+  background-color: #8446ea !important;
+  }
+  }
+  .owl-prev {
+bottom: -5px;
+left:37%;
+&:hover{
+background-color: #8446ea !important;
+}
+  }
+  .owl-carousel {
+    .owl-stage {
+      .owl-item {
+        background: #f9f9f9;
+position: relative;
+.say_icon{
+  position:absolute;
+  top: 3px ;
+  right: 5px;
+}
+        .logo {
+          width: 62px;
+          height: 62px;
+
+          img {
+            width: 100%;
+          }
+        }
+        h6{
+          font-size: 25px !important;
+        }
+      }
+    }
+  }
+}
+.toast-container .ngx-toastr.toast-success{
+background-color: #2f96b4 !important;
+}
+/////////////////////////////////////////////////////////////
+@media (max-width:575px ){
+  .reviews{
+    .section_title{
+      span{
+          &::before{
+              width: 0px !important;
+          }
+      }}
+    .owl-next {
+   display: none !important;
+    }
+    .owl-prev {
+     display: none !important;
+    }
+  }
+
+}
+@media (max-width:992px ){
+  .review{
+    .owl-next  , .owl-prev{
+    display: none !important;
+        }
+  }
+}

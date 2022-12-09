@@ -1,0 +1,55 @@
+.blog_details{
+  padding: 80px 0px;
+  p,h5{
+      font-family: 'Tajawal';
+font-style: normal;
+letter-spacing: -0.065em;
+  }
+  img{
+      width: 100%;
+      height: 500px;
+      border-radius: 15px;
+  }
+  .card{
+      background: none;
+      border: none;
+      .card-body{
+          padding-top: 20px;
+          .card-text{
+              font-weight: 500;
+              font-size: 24px !important;
+              line-height: 179.5% !important;
+             width: 97%;
+              color: #7A7A7A;
+
+          }
+          .card-title{
+              font-weight: 700;
+font-size: 32px;
+line-height: 179.5%;
+
+color: #030303;
+transition: .3s;
+cursor: pointer;
+&:hover{
+  color: #6246EA;
+}
+          }
+         .text-muted{
+          font-family: 'Poppins';
+font-weight: 500;
+font-size: 20px;
+line-height: 247%;
+letter-spacing: 0.01em;
+color: #E45858 !important;
+          img{
+              width: 30px;
+              height: 30px ;
+              border-radius: 50%;
+              margin-left: 10px;
+          }
+
+         }
+      }
+  }
+}

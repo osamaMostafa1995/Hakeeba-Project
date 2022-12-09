@@ -1,0 +1,124 @@
+<section class="center_create">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-4">
+        <div class="form_info">
+          <div class="buttons_steps_create mb-5">
+            <div class="btn btn_info text-primary" type="button">
+              <span
+                class="bg-primary text-white"
+                style="padding: 2px 10px; border-radius: 50%; margin-left: 2px"
+              >
+                1
+              </span>
+              <span style="margin-right: 10px"> المعلومات</span>
+            </div>
+
+            <button class="btn btn_info_center text-form_color" type="button" (click)="route()">
+              <span
+                class="bg-white text-gray"
+                style="
+                  padding: 2px 10px;
+                  border-radius: 50%;
+                  margin-left: 2px;
+                  background-color: #f3f3f3;
+                "
+              >
+                2
+              </span>
+
+              <span style="margin-right: 10px"> معلومات الخاصة بالمركز </span>
+            </button>
+          </div>
+          <h5
+            class="section_pragraph text-black mb-4"
+            style="font-weight: 700 !important"
+          >
+          أدخل المعلومات التالية
+          </h5>
+          <form class="form">
+            <div class="mb-4" style="position: relative">
+              <details class="custom-select carousel_p" style="z-index: 5">
+                <summary class="radios input">
+                  <input
+                    type="radio"
+                    name="item"
+                    id="default"
+                    title="الدوله"
+                    class="text-gray"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="item"
+                    id="item1"
+                    title="الاختيار الاول"
+                  />
+                  <input type="radio" name="item" id="item2" title="Item 2" />
+                  <input type="radio" name="item" id="item3" title="Item 3" />
+                  <input type="radio" name="item" id="item4" title="Item 4" />
+                  <input type="radio" name="item" id="item5" title="Item 5" />
+                </summary>
+                <ul class="list">
+                  <li>
+                    <label for="item1">
+                      الاختيار الاول
+                      <span></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="item2">Item 2</label>
+                  </li>
+                  <li>
+                    <label for="item3">Item 3</label>
+                  </li>
+                  <li>
+                    <label for="item4">Item 4</label>
+                  </li>
+                  <li>
+                    <label for="item5">Item 5</label>
+                  </li>
+                </ul>
+              </details>
+            </div>
+            <div class="mb-4">
+              <ngx-mat-intl-tel-input
+                [enablePlaceholder]="true"
+                inputPlaceholder="رقم الهاتف"
+                [preferredCountries]="['eg', 'sa', 'sy', 'jo', 'ps', 'tr']"
+                [enablePlaceholder]="true"
+                [preferredCountries]="['sa', 'gb']"
+                [enablePlaceholder]="true"
+                [enableSearch]="true"
+                name="phone"
+                describedBy="phoneInput"
+                class="carousel_p"
+              ></ngx-mat-intl-tel-input>
+            </div>
+            <div class="mb-4" style="position: relative">
+              <input
+                placeholder=" المؤهل العلمى"
+                type="text"
+                class="form-control carousel_p input"
+                id="exampleInputPassword1"
+              />
+            </div>
+
+            <div class="btns">
+              <button class="btn btn-primary text-white carousel_p mt-5">
+                أنهاء
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+      <div class="col-lg-6">
+        <div class="image">
+          <img src="assets/images/landing/center_img.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

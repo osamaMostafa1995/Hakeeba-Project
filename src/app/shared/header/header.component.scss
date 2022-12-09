@@ -1,0 +1,259 @@
+// .navbar.navbar-expand-lg{
+//   padding: 30px 0px;
+//   .navbar-nav{
+//     margin-right: auto;
+//   }
+
+//   .nav-item{
+//      margin: 0px 15px;
+      .nav-link{
+
+          color: #000000;
+          font-family: 'Tajawal';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 17px;
+          line-height: 105.5%;
+          letter-spacing: -0.0em;
+          padding: 8px 0px;
+      }
+//       .btn_box{
+//           margin-left: 15px;
+//       }
+//    .btn{
+
+//       border-radius: 23px;
+//           padding: 10px 20px;
+//           font-family: 'Tajawal';
+// font-style: normal;
+// font-weight: 700;
+// font-size: 15px;
+// line-height: 105.5%;
+// letter-spacing: -0.0em;
+// color: #FFFFFF;
+//    }
+//       .active{
+//           color:#6246EA;
+//           border-bottom: 2px solid #6246EA;
+
+//       }
+//   }
+//   .nav-item:last-child{
+//     margin: 0px 20px 0px 0px;
+//   }
+//   @media (max-width: 991px) {
+//     .navbar-collapse.collapse{
+//       background-color: #6246ea63 ;
+//       margin-top: 10px;
+//       border-radius: 11px;
+//       .active{
+//         color:#6246EA;
+//         border-bottom: 1px solid #ffffff;
+//  margin: 0 auto;
+//     }
+//     }
+//     .navbar-nav{
+//       margin-right: 10px !important;
+//       padding: 0 !important;
+//       .nav-item{
+//         margin: 0px 0px 0px 10px;
+//       }
+//     }
+//   }
+// }
+.header {
+
+background-color: #fff;
+  position: fixed;
+  width: 100%;
+z-index: 10;
+display: flex;
+align-items: center;
+padding: 15px 0px;
+}
+.navbar-inverse {
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.253);
+  background-color: #fff;
+  padding: 0px;
+  margin: 0px;
+  min-height: 50px;
+}
+.btn{
+margin-right: 2px;
+        border-radius: 23px;
+            padding: 10px 20px;
+            font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 105.5%;
+  letter-spacing: -0.0em;
+  color: #FFFFFF !important;
+     }
+        .active{
+            color:#6246EA !important;
+            border-bottom: 2px solid #6246EA;
+
+        }
+.header ul {
+
+  margin: 19px auto;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+            font-family: 'Tajawal';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 105.5%;
+            letter-spacing: -0.0em;
+
+}
+.header .btn_box{
+      margin: 0px 0px 0px 0px !important;
+      padding: 0px 10px 0px 0px !important;
+    }
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo  {
+  img{
+    width:40px ;
+height: 35px;
+  }
+  display: inline-block;
+  padding: 20px 0px;
+
+background-size: cover;
+overflow: hidden;
+}
+
+// /* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+// /* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  padding: 36px 20px 0px 0px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #6246EA;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 20px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #6246EA;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+// /* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+// /* 48em = 768px */
+@media (max-width: 991px) {
+  .header ul{
+    margin: 0px 0px 10px;
+    li{
+      .btn{
+        margin-right: 0px;
+        margin-top: 10px;
+                border-radius: 23px;
+                    padding: 10px 20px;
+                    font-family: 'Tajawal';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 105.5%;
+          letter-spacing: -0.0em;
+          color: #FFFFFF;
+             }
+                .active{
+                    color:#6246EA;
+                    border-bottom: 2px solid #6246EA;
+
+                }
+    }
+   }
+}
+@media (min-width: 992px) {
+ .header ul{
+  margin: 19px auto;
+ }
+  .header li {
+    float: right;
+    padding: 0px 20px !important;
+  }
+
+  .header .menu {
+    clear: none;
+    float: left;
+    max-height: none;
+
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
