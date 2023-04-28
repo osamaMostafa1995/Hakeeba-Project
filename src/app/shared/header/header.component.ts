@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { HomeService } from 'src/app/services/home.service';
 
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
   isScrolled = false;
   logoImg: any;
   loading:boolean=true
-  constructor(private logo:HomeService) { }
+  status: boolean = false;
+  constructor(private logo:HomeService , private router:Router) { }
 
   ngOnInit(): void {
     this.getLogo()
@@ -23,8 +25,23 @@ export class HeaderComponent implements OnInit {
   getLogo(){
 this.logo.showlandingPage().subscribe((res:any)=>{
   console.log(res,'logo');
-this.logoImg=`http://admin.hqeba.com${res.content.logo}`
+this.logoImg=`https://admin.hqeba.sa${res?.content?.logo}`
 this.loading=false
 })
   }
+
+
+  ///////////////////////
+
+  toggle(){
+
+   this.status= !this.status
+   console.log(this.status);
+
+  }
+closeMenu(){
+  setTimeout(() => {
+    this.status=false
+  }, 1000);
+}
 }

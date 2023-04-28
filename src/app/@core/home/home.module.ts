@@ -9,13 +9,7 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
-import { MainBlogComponent } from './blogs/Components/main-blog/main-blog.component';
-import { TabOneComponent } from './blogs/Components/tab-one/tab-one.component';
-import { TabTwoComponent } from './blogs/Components/tab-two/tab-two.component';
-import { TabThreeComponent } from './blogs/Components/tab-three/tab-three.component';
-import { TabFourComponent } from './blogs/Components/tab-four/tab-four.component';
-import { TabFiveComponent } from './blogs/Components/tab-five/tab-five.component';
-import { RelatedBlogsComponent } from './blog-details/Components/related-blogs/related-blogs.component';
+
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { VerifyCodeComponent } from './auth/verify-code/verify-code.component';
 import { NgOtpInputModule } from 'ng-otp-input';
@@ -32,6 +26,11 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { PrivateCenterInformationComponent } from './private-center-information/private-center-information.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { HomeLayoutComponent } from './home-layout/home-layout.component';
+import { ReturnPolicyComponent } from './return-policy/return-policy.component';
+import { TermsComponent } from './terms/terms.component';
+import { AboutHaqebaComponent } from './about-haqeba/about-haqeba.component';
+import { PayFormComponent } from './pay-form/pay-form.component';
 @NgModule({
   declarations: [
     LandingComponent,
@@ -39,13 +38,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     BlogsComponent,
     BlogDetailsComponent,
 
-    MainBlogComponent,
-    TabOneComponent,
-    TabTwoComponent,
-    TabThreeComponent,
-    TabFourComponent,
-    TabFiveComponent,
-    RelatedBlogsComponent,
+
+
     SignInComponent,
     VerifyCodeComponent,
     ResetPasswordComponent,
@@ -55,6 +49,11 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CenterAddInformationComponent,
     CenterEmailVerifyComponent,
     PrivateCenterInformationComponent,
+    HomeLayoutComponent,
+    ReturnPolicyComponent,
+    TermsComponent,
+    AboutHaqebaComponent,
+    PayFormComponent,
 
   ],
   imports: [

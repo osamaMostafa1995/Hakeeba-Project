@@ -14,6 +14,8 @@ export class CenterSignupComponent implements OnInit {
   myForm!: FormGroup;
   submitted:boolean=false;
   loading:boolean=true
+  show: boolean = false;
+  showpass1: boolean = false;
   constructor(    private logIn: CenterAuthService,
     private router: Router,
     private rout: ActivatedRoute,
@@ -22,16 +24,16 @@ export class CenterSignupComponent implements OnInit {
     submit(){
       this.submitted=true
       console.log(this.myForm.value);
+      if(this.myForm.value.password!=this.myForm.value.confirm ){
+        this.t.error('', 'من فضلك   تحقق من اعاده كلمه السر',{
+          closeButton: true,
+          tapToDismiss:true,
+      disableTimeOut:true,
+      });
+return;
+        }
       if (this.myForm.invalid){
-        if(this.myForm.value.password!=this.myForm.value.confirm ){
-          this.t.error('', 'من فضلك   تحقق من اعاده كلمه السر',{
-            closeButton: true,
-            tapToDismiss:true,
-        disableTimeOut:true,
-        });
 
-
-          }
           if(this.myForm.controls['email'].errors){
             this.t.error('', 'من فضلك ادخل البريد الالكتروني بشكل صحيح' ,{
               closeButton: true,
@@ -40,7 +42,7 @@ export class CenterSignupComponent implements OnInit {
           });
           }
           if(this.myForm.controls['password'].errors){
-            this.t.error('', 'من فضلك ادخل كلمه السر   ' ,{
+            this.t.error('', 'يجب ان لا يقل كلمه السر عن 8 احرف او ارقام    ' ,{
               closeButton: true,
               tapToDismiss:true,
           disableTimeOut:true,
@@ -61,15 +63,19 @@ export class CenterSignupComponent implements OnInit {
         }
         this.logIn.createCenter(form).subscribe((res:any)=>{
           if (res.status==200) {
-            alert('تم التسجيل بنجاح');
-            this.router.navigate(['create_center/center_email_verify'])
+
+            this.router.navigate(['create_center/center_email_verify'],{queryParams:{
+              email:this.myForm.value.email,
+              password:this.myForm.value.password,
+              from:"create_center"
+            }} )
           }
         })
       }
 
     }
   ngOnInit(): void {
-    this.loading=false;
+
     this.myForm = this.formbuilder.group({
       email: [
         '',
@@ -79,15 +85,20 @@ export class CenterSignupComponent implements OnInit {
           Validators.email,
         ],
       ],
-      password: ['', Validators.required],
+      password: ['',[ Validators.required ,Validators.minLength(8)] ],
     confirm:['', Validators.required],
       name: ['', Validators.required],
     });
+   setTimeout(() => {
+    this.loading=false;
+   }, 1000);
 }
 
 
 sign_in(){
-  this.router.navigate(['../registration'])
+  this.router.navigate(['registration'])
 }
-
+showPass(){
+  this.show= !this.show
+}
 }

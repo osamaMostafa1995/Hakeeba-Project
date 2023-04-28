@@ -1,0 +1,101 @@
+<section class="pay ">
+  <div class="container">
+
+  <section class="formPay " style="background-color: #fbfbfb;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 m-auto">
+          <h5 class="section_pragraph text-black mb-2"><b>قم بتأكيد الشراء</b></h5>
+          <p class="carousel_p text-gray mb-5">يمكنك الآن إجراء عملية الشراء</p>
+          <div class="accordion ">
+
+
+            <form  data-aos="fade-up" class="gate form" style="margin-bottom: 15px;"  [formGroup]="myForm" (ngSubmit)="onSubmit()">
+              <div class="form-group mb-4 ">
+                <label for="exampleFormControlInput1">رقم البطاقة</label>
+                <div class="cart">
+                  <input type="text" class="form-control" formControlName="number" >
+                  <svg width="34" height="25" viewBox="0 0 34 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M30.3571 0H3.64286C2.67671 0 1.75014 0.3838 1.06697 1.06697C0.3838 1.75014 0 2.67671 0 3.64286V20.6429C0 21.609 0.3838 22.5356 1.06697 23.2187C1.75014 23.9019 2.67671 24.2857 3.64286 24.2857H30.3571C31.3233 24.2857 32.2499 23.9019 32.933 23.2187C33.6162 22.5356 34 21.609 34 20.6429V3.64286C34 2.67671 33.6162 1.75014 32.933 1.06697C32.2499 0.3838 31.3233 0 30.3571 0ZM3.64286 2.42857H30.3571C30.6792 2.42857 30.9881 2.5565 31.2158 2.78423C31.4435 3.01195 31.5714 3.32081 31.5714 3.64286V6.07143H2.42857V3.64286C2.42857 3.32081 2.5565 3.01195 2.78423 2.78423C3.01195 2.5565 3.32081 2.42857 3.64286 2.42857ZM30.3571 21.8571H3.64286C3.32081 21.8571 3.01195 21.7292 2.78423 21.5015C2.5565 21.2738 2.42857 20.9649 2.42857 20.6429V10.9286H31.5714V20.6429C31.5714 20.9649 31.4435 21.2738 31.2158 21.5015C30.9881 21.7292 30.6792 21.8571 30.3571 21.8571Z"
+                      fill="#7A7A7A" />
+                  </svg>
+                </div>
+
+              </div>
+              <div class="row">
+
+                <div class="col-lg-3">
+                  <div class="form-group ">
+                    <label for="exampleFormControlInput1"> تاريخ إنتهاء الصلاحية</label>
+                    <div class="select  select_1">
+                      <!-- (change)="logform()" -->
+                      <img class="img" alt="" src="assets/images/icons/down-arrow.png">
+                      <select  formControlName="year" style="color: #000 !important ; font-weight: 700; background-color: #fff !important;"
+                        #select>
+
+                        <option [value]="0">السنة</option>
+                        <option [value]="i+2023" *ngFor="let item of [].constructor(5); let i=index">{{i+2023}}</option>
+
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group ">
+                    <label for="exampleFormControlInput1"> الشهر</label>
+                    <div class="select  select_1">
+                      <!-- (change)="logform()" -->
+                      <img class="img" alt="" src="assets/images/icons/down-arrow.png">
+                      <select required formControlName="month" style="color: #000 !important ; font-weight: 700; background-color: #fff !important;"
+                        #select>
+
+                        <option [value]="0">الشهر</option>
+                        <option [value]="i+1" *ngFor="let item of [].constructor(12); let i=index">{{i+1}}</option>
+
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group ">
+                    <label for="exampleFormControlInput1">CVV</label>
+                    <div class="cart">
+                      <input required formControlName="cvc" type="text" class="form-control" style="  direction: ltr;">
+
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group ">
+                    <label for="exampleFormControlInput1">الاسم</label>
+                    <div class="cart">
+                      <input required formControlName="name" type="text" class="form-control" style="  direction: ltr;">
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="sum d-flex justify-content-between align-items-center mt-3 mb-3">
+                <span class="carousel_p text-black fw-blod">المجموع</span>
+                <span class="carousel_p text-primary fw-blod">{{price}}SAR</span>
+              </div>
+              <button class="text-primary" type="submit" >دفع الان</button>
+            </form>
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+  </div>
+</section>

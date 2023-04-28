@@ -1,0 +1,175 @@
+section.pay{
+  padding: 150px 0px;
+}
+section.formPay{
+  padding: 30px 0px 60px;
+  min-height: 300px !important;
+.paybygate{
+  background: #FFFFFF;
+padding: 0px 20px;
+  border: 1px solid #C6BBBB;
+  border-radius: 10px;
+
+min-height: 62px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+ul{
+  list-style: none;
+padding: 0px;
+margin: 0px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+
+}
+}
+
+
+}
+.gate{
+  background: #F8F8F8;
+border: 1px solid #C6BBBB;
+border-radius: 10px;
+padding: 20px;
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow:none;
+  border:0!important;
+  background: #F0F0F0;
+  background-image: none;
+  flex: 1;
+  display: flex;
+align-items: center;
+  padding: 0 13px 0px 10px !important;
+  color:#000000;
+  cursor:pointer;
+
+
+}
+select::-ms-expand {
+  display: none;
+}
+.select {
+overflow: hidden !important;
+border-radius: 100px !important;
+  position: relative;
+  display: flex;
+  line-height: 4;
+  background: #F0F0F0;
+  overflow: hidden;
+  border-radius: .25em;
+  color: #000000 !important;
+  height: 50px;
+}
+.select  {
+  .img{
+     /* display: inline-block; */
+     width: 50px !important;
+     height: 23px !important;
+     position: absolute;
+     top: 14px;
+     left: 0px;
+     padding: 0 1em;
+     width: 20px;
+     height: 20px;
+     cursor: pointer;
+     pointer-events: none;
+     transition: 0.25s all ease;
+  }
+
+}
+.select .img_rotate {
+  transform: rotate(180deg);
+  width: 50px !important;
+  height: 23px !important;
+  position: absolute;
+  top: 14px;
+  left: 0px;
+  padding: 0 1em;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+select::-ms-expand {
+  display: none !important;
+}
+
+.bank_info{
+
+margin: 5px 0px 0px  ;
+button{
+  transition: .3s;
+  &:hover{
+    background-color: #c4c4c4 !important;
+
+  }
+
+}
+.name_bank_owner{
+
+height: 62px;
+
+font-weight: 700;
+color: #333;
+border: 1px solid #C6BBBB !important;
+border-radius: 10px;
+background-color: #F8F8F8 !important;
+  &::placeholder{
+
+    color: #7A7A7A;
+    font-weight: 700;
+  }
+}
+}
+button{
+  width: 100%;
+height: 69px;
+
+border: 1px solid #C6BBBB;
+font-size: 20px;
+background: #1CE99F;
+border-radius: 10px;
+}
+.select{
+  border: 1px solid #C6BBBB !important;
+  border-radius: 10px !important;
+  height: 62px !important;
+  background-color: #fff !important;
+  .img{
+top:23px !important
+  }
+}
+label{
+  margin-bottom: 10px;
+  font-size: 12px ;
+  font-weight: 500;
+}
+.cart{
+  position: relative;
+
+  input{
+    border: 1px solid #C6BBBB;
+    border-radius: 10px;
+    height: 62px;
+    background-color: #fff;
+    padding-right: 70px;
+    &:focus{
+      border: 1px solid #C6BBBB;
+      box-shadow: none;
+    }
+  }
+  svg{
+    position: absolute;
+    right: 20px ;
+    top:22px
+  }
+}
+}

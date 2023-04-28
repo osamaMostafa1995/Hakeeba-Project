@@ -1,11 +1,11 @@
-<section class="choose_sign_in text-center">
+<section class="choose_sign_in text-center" *ngIf="show&&data.from=='sign_in'"  >
   <div class="container">
     <div class="sign_in_form_img" >
       <img src="assets/images/landing/sign-in.png" alt="" style="width:130px ;height:150px">
       <h6 class="text-black section_pragraph mt-4 mb-3 "style='font-weight:700'>
         تسجيل الدخول
       </h6>
-      <p class="text-gray carousel_p mb-4" style="font-size: 17px !important; width: 90%; margin: 0 auto;">
+      <p class="text-gray carousel_p mb-4" >
         لا يتم فرض رسوم في الفترة التجريبية، وعند انتهاء المدة، يتم الاشتراك أو إلغاء التسجيل
       </p>
   <div class="form">
@@ -19,3 +19,79 @@
     </div>
   </div>
 </section>
+
+
+<section class="choose_sign_in text-center" *ngIf="show&&data.from=='create_center'" dir="rtl">
+  <div class="container">
+    <div class="card m-0 p-0" >
+     <div class="card-body p-0" *ngIf="test" >
+      <svg class="mb-4" width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="47" cy="47" r="47" fill="#FFCF2D" fill-opacity="0.17"/>
+        <path d="M63.1799 53.4383C62.4611 54.1349 62.1309 55.1423 62.2946 56.1303L64.7619 69.7849C64.97 70.9422 64.4815 72.1134 63.513 72.7822C62.5638 73.4761 61.301 73.5593 60.2658 73.0043L47.974 66.5933C47.5466 66.3657 47.072 66.2436 46.5863 66.2297H45.8342C45.5733 66.2686 45.318 66.3518 45.0849 66.4795L32.7902 72.921C32.1824 73.2263 31.4941 73.3345 30.8197 73.2263C29.1767 72.9155 28.0805 71.3502 28.3497 69.6989L30.8197 56.0443C30.9835 55.048 30.6532 54.035 29.9344 53.3273L19.9127 43.6137C19.0746 42.8005 18.7832 41.5793 19.1662 40.4775C19.5381 39.3785 20.4872 38.5765 21.6334 38.3961L35.4268 36.3951C36.4758 36.2868 37.3972 35.6485 37.869 34.7049L43.947 22.2437C44.0913 21.9662 44.2772 21.7109 44.502 21.4944L44.7518 21.3001C44.8823 21.1558 45.0321 21.0365 45.1986 20.9393L45.5012 20.8283L45.973 20.634H47.1414C48.1849 20.7423 49.1035 21.3667 49.5836 22.2992L55.7421 34.7049C56.1861 35.6124 57.0492 36.2424 58.0456 36.3951L71.8389 38.3961C73.0045 38.5626 73.9787 39.3674 74.3644 40.4775C74.728 41.5905 74.4144 42.8116 73.5596 43.6137L63.1799 53.4383Z" fill="#FFCF2D"/>
+        </svg>
+        <h6 class="section_pragraph fw-bold mb-4">المدة التجريبية لمدة  <span class="text-green">14 يوم</span></h6>
+<p class="carousel_p text-gray mb-4">لا يتم فرض رسوم في الفترة التجريبية، وعند انتهاء المدة، يتم الاشتراك أو إلغاء التسجيل</p>
+<div class="form">
+  <div class="mb-4 ">
+    <button class="btn bg-green text-primary w-100 center-btn"  (click)="test= !test" >  دفع الان</button>
+  </div>
+  <div class="mb-3 ">
+    <button style=" border: 1px solid #6246EA !important;" class="btn bg-white text-primary w-100 trainer-btn"  (click)="gotodashbord()">  بدء المده التجريبيه</button>
+  </div>
+</div>
+     </div>
+     <div class="card-body p-0 " *ngIf="!test" >
+      <div class="price text-center" style="background: #F4F4F4;
+      border-radius: 9px; padding: 10px ;">
+        <svg class="mt-3 mb-3" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="27" cy="27" r="27" fill="#FFCF2D"/>
+          <path d="M36.2945 30.6985C35.8816 31.0987 35.6918 31.6774 35.7859 32.245L37.2033 40.0891C37.3229 40.754 37.0422 41.4268 36.4858 41.811C35.9406 42.2096 35.2151 42.2574 34.6205 41.9385L27.5592 38.2556C27.3136 38.1249 27.041 38.0548 26.762 38.0468H26.3299C26.1801 38.0691 26.0334 38.1169 25.8995 38.1903L18.8366 41.8907C18.4874 42.0661 18.092 42.1283 17.7046 42.0661C16.7608 41.8875 16.131 40.9883 16.2857 40.0397L17.7046 32.1956C17.7987 31.6232 17.6089 31.0413 17.196 30.6347L11.4389 25.0546C10.9574 24.5874 10.79 23.8859 11.01 23.253C11.2237 22.6216 11.7689 22.1609 12.4274 22.0572L20.3512 20.9077C20.9539 20.8455 21.4832 20.4788 21.7542 19.9368L25.2458 12.7782C25.3287 12.6188 25.4355 12.4721 25.5647 12.3478L25.7081 12.2362C25.7831 12.1532 25.8692 12.0847 25.9648 12.0289L26.1386 11.9651L26.4097 11.8535H27.0809C27.6803 11.9157 28.2081 12.2744 28.4839 12.8101L32.0217 19.9368C32.2768 20.4581 32.7726 20.82 33.345 20.9077L41.2688 22.0572C41.9384 22.1529 42.498 22.6152 42.7197 23.253C42.9285 23.8923 42.7484 24.5938 42.2573 25.0546L36.2945 30.6985Z" fill="white"/>
+          </svg>
+
+          <h6 class="feature fw-bold">
+            <span class="me-2">{{data?.price}}</span>SAR
+          </h6>
+          <p class="carousel_p text-gray mb-4">لا يتم فرض رسوم في الفترة التجريبية، وعند انتهاء المدة، يتم الاشتراك أو إلغاء التسجيل</p>
+
+      </div>
+<h6 class="text-black carousel_p fw-bold mt-3 mb-3" dir="ltr" style="width: 100% !important;text-align: left !important; padding: 0px; ">
+  dashboard_link : <span class="text-primary">
+  https://admin.hqeba.sa/{{data?.domain}}/dashboard
+
+ </span>
+
+</h6>
+<h6 class="text-black carousel_p fw-bold  mb-3" dir="ltr" style="width: 100% !important;text-align: left !important; padding: 0px; ">
+ Website_link : <span class="text-primary">
+  https://h.hqeba.sa/{{data?.domain}}/center/home
+
+ </span>
+
+</h6>
+<ul class="list-unstyled p-0 m-0" style="text-align:right !important ;">
+  <li class="carousel_p text-primary mt-3 mb-3" style="width: 100% !important;">
+    <svg style="cursor: pointer;" class="ms-2" (click)="show_btn= !show_btn" *ngIf="!show_btn" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10.5" cy="10.5" r="10" stroke="#2353C0"/>      </svg>
+      <svg style="cursor: pointer;" class="ms-2" (click)="show_btn= !show_btn" *ngIf="show_btn" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10.5" cy="10.5" r="10" stroke="#2353C0"/>
+        <circle cx="10.5" cy="10.5" r="6.5" fill="#2353C0"/>
+        </svg>
+        تأكيد عمليه الدفع
+  </li>
+  <li class="carousel_p text-danger mt-3 mb-5" style="width: 100% !important;">
+  <svg  (click)="gotodashbord()" style="cursor: pointer;" class="ms-2" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10.5" cy="10.5" r="10" stroke="#2353C0"/>    </svg>
+      الغاء  عمليه الدفع
+</li>
+</ul>
+<div class="form">
+  <div class="mb-4 ">
+    <button class="btn bg-green text-primary w-100 center-btn" [disabled]="!show_btn" (click)="payNow()">  دفع الان</button>
+  </div>
+
+</div>
+     </div>
+    </div>
+  </div>
+</section>
+<!-- policy -->

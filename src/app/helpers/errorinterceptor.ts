@@ -40,7 +40,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                    });
                     break;
                 case 500:
-                  this.t.error('',                     'حدث خطأ غير معروف. حاول لاحقًا'
+                  this.t.error('',      err.error.error
                   ,{
                     closeButton: true,
                     tapToDismiss:true,

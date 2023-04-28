@@ -1,0 +1,16 @@
+<app-loader *ngIf="loading"></app-loader>
+<section *ngIf="!loading"class="Policy"  dir="rtl">
+    <div class="container">
+      <div class="card m-0 p-0" >
+        <div class="card-header bg-primary text-white">
+        <h2 class="info_title m-0"  >
+            الشروط و الاحكام    </h2>
+        </div>
+       <div class="card-body">
+  <div class="carousel_p" [innerHTML]="this.terms">
+
+  </div>
+       </div>
+      </div>
+    </div>
+  </section>

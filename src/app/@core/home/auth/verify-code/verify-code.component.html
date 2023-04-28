@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-1"></div>
-      <div class="col-lg-4">
+      <div class="col-lg-4" >
 <div class="verify_form">
   <h6 class="section_pragraph text-black mb-2" style="font-weight: 700 !important;">
     استعادة كلمة المرور </h6>
@@ -13,7 +13,7 @@
 <form
  class="form "  [formGroup]="myForm">
  <div class="mt-5 mb-3">
-  <ng-otp-input  (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
+  <ng-otp-input dir="ltr"  (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
 
  </div>
  <p  class="carousel_p text-primary mb-5" (click)="resendCode()" style="cursor:pointer ;"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,7 @@
   </div>
       </div>
 <div class="col-lg-1"></div>
-      <div class="col-lg-5">
+      <div class="col-lg-5 d-none d-lg-block">
         <div class="image">
           <svg  height="503" viewBox="0 0 472 503" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M414.838 53.5319C452.091 79.2327 465.648 138.722 455.992 187.031C446.336 235.339 413.377 272.401 383.534 299.271C353.594 326.132 326.679 342.704 294.591 361.578C262.507 380.562 225.157 401.885 180.697 402.958C136.325 404.026 84.8333 384.848 59.1819 347.362C33.4245 309.882 33.5213 254.194 46.8842 204.634C60.1456 155.078 86.6731 111.645 123.635 85.8662C160.598 60.0871 208.087 51.9713 262.313 43.8924C316.539 35.8134 377.489 27.7298 414.838 53.5319Z" fill="#F0F0F0"/>

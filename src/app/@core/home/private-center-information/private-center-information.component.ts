@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-private-center-information',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivateCenterInformationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private logo :HomeService) { }
 
   ngOnInit(): void {
   }
-
 }

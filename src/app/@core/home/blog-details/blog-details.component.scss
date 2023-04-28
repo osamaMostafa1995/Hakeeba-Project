@@ -1,25 +1,36 @@
 .blog_details{
-  padding: 80px 0px;
+  padding: 150px 0px;
   p,h5{
       font-family: 'Tajawal';
 font-style: normal;
 letter-spacing: -0.065em;
   }
-  img{
-      width: 100%;
-      height: 500px;
-      border-radius: 15px;
+  .blog_desc{
+    font-size: 26px;
   }
+ .img{
+  img{
+
+    width: 100%;
+    height: 500px;
+    border-radius: 15px;
+}
+ }
   .card{
+    &:hover{
+      .card-title{
+      color: #6246EA !important;
+      }
+    }
       background: none;
       border: none;
       .card-body{
           padding-top: 20px;
           .card-text{
               font-weight: 500;
-              font-size: 24px !important;
+              font-size: 26px ;
               line-height: 179.5% !important;
-             width: 97%;
+             width: 100%;
               color: #7A7A7A;
 
           }
@@ -31,9 +42,7 @@ line-height: 179.5%;
 color: #030303;
 transition: .3s;
 cursor: pointer;
-&:hover{
-  color: #6246EA;
-}
+
           }
          .text-muted{
           font-family: 'Poppins';
@@ -42,12 +51,55 @@ font-size: 20px;
 line-height: 247%;
 letter-spacing: 0.01em;
 color: #E45858 !important;
-          img{
-              width: 30px;
-              height: 30px ;
-              border-radius: 50%;
-              margin-left: 10px;
+
+         }
+      }
+  }
+  @media (max-width:425px){
+    .img{
+     img{
+      height: 300px;
+     }
+    }
+    .blog_desc {
+      width: 100% !important;
+      font-size: 17px !important;
+    }
+        }
+}
+.all_blogs{
+
+
+  img{
+      width: 100%;
+      border-radius: 15px;
+  }
+  .card{
+      background: none;
+      border: none;
+      .card-body{
+        .card-title{
+          transition: .3s;
+          cursor: pointer;
+          &:hover{
+            color: #6246EA !important;
           }
+        }
+          padding: 5px 0px 0px;
+          .carousel_p{
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            line-height: 183.5% !important;
+          }
+
+         .text-muted{
+          font-family: 'Poppins';
+font-weight: 600;
+font-size: 15px;
+line-height: 247%;
+letter-spacing: 0.01em;
+color: #E45858 !important;
+
 
          }
       }

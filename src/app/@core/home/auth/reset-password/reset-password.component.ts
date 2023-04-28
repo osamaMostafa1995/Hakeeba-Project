@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CenterAuthService } from 'src/app/services/center-auth.service';
 
 @Component({
@@ -9,11 +10,19 @@ import { CenterAuthService } from 'src/app/services/center-auth.service';
 })
 export class ResetPasswordComponent implements OnInit {
   email:any
-  constructor(private logIn:CenterAuthService , private rout :ActivatedRoute , private router:Router) {
+  show: boolean=false;
+  showa: boolean=false;
+  constructor(private logIn:CenterAuthService , private rout :ActivatedRoute ,private t:ToastrService, private router:Router) {
     this.email=this.rout.snapshot.queryParamMap.get('email');
    }
 
   ngOnInit(): void {
+  }
+  showPass(){
+    this.show= !this.show
+  }
+  showPassAgain(){
+    this.showa= !this.showa
   }
 createPass(val:any , confirm:any){
 if(val==confirm &&val!=''){
@@ -22,11 +31,20 @@ email:this.email,
 newPassword:val
   }
 this.logIn.createPass(form).subscribe((res:any)=>{
-  alert("تم تغير كلمه السر بنجاح");
-  this.router.navigate(['registration'])
+
+  this.t.success('   تغيير كلمه المرور بنجاح',"تم بنجاح" ,{
+    closeButton: true,
+    tapToDismiss:true,
+  disableTimeOut:true,
+  });
+  this.router.navigate(['Haqeba/registration'])
 })
 }else{
-  alert("يرجي التحقق من اعادة كلمه السر")
+  this.t.error('', 'من فضلك ادخل البريد الالكتروني',{
+    closeButton: true,
+    tapToDismiss:true,
+disableTimeOut:true,
+});
 }
 }
 }

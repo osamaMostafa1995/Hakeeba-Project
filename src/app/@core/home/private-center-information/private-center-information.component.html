@@ -133,7 +133,17 @@
 
 
           </div>
-          <div class="mb-4" style="position: relative ; z-index: 6;">
+          <div class="mb-3">
+            <div class="select  select_1" >
+              <!-- (change)="logform()" -->
+              <img class="" alt="" [ngClass]=" 'img'" src="assets/images/icons/down-arrow.png">
+              <select   style="color: #7A7A7A !important ;padding-right: 24px !important;" name="format" id="format" #select formControlName="type">
+                <option value="0">اختصاص المركز التدريبي</option>
+
+              </select>
+            </div>
+          </div>
+          <!-- <div class="mb-4" style="position: relative ; z-index: 6;">
             <details class="custom-select carousel_p" style="z-index: 5">
               <summary class="radios input">
                 <input
@@ -221,7 +231,7 @@
                 </li>
               </ul>
             </details>
-          </div>
+          </div> -->
           <div class="mb-4">
             <label for="exampleInputEmail1" class="form-label text-black carousel_p"> هل تم توثيق سجلك التجاري </label>
             <div class="row">

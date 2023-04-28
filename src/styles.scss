@@ -13,7 +13,7 @@ $theme-colors: (
 );
 ;
 
-@import "~@ng-select/ng-select/themes/default.theme.css";
+@import 'aos/dist/aos.css';
 @import "node_modules/bootstrap/scss/bootstrap";
 @import '~ngx-toastr/toastr';
 @font-face {
@@ -37,12 +37,31 @@ $theme-colors: (
 html,
 body {
   height: 100%;
+  width: 100%;
+
+//  overflow-x: hidden !important;
+
 }
 
 body {
   margin: 0;
+  &::-webkit-scrollbar {
+    width:auto;
 }
+&::-webkit-scrollbar-track {
+background-color: #7372792d;
 
+
+}
+&::-webkit-scrollbar-thumb {
+
+ background-color:  #6246ea;
+ ;
+}
+}
+.card{
+  border: none ;
+}
 .reviews,
 .review {
   position: relative;
@@ -116,14 +135,16 @@ text-align: center;
           margin: auto;
           border-radius: 50%;
           overflow: hidden;
-
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
           img {
             width: 100%;
           }
         }
 
         h6 {
-          font-family: "Poppins";
+          font-family: "Tajawal" !important;
           margin-top: 20px;
           text-align: center !important;
           font-style: normal;
@@ -190,6 +211,11 @@ text-align: center;
         .logo {
           width: 50px;
           height: 50px;
+          margin: 0 auto;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          border: 1px solid #ddd;
         }
 
         h6 {
@@ -251,7 +277,9 @@ position: relative;
         .logo {
           width: 62px;
           height: 62px;
-
+          background-size: cover;
+          background-repeat: no-repeat;
+          border: 1px solid #ddd;
           img {
             width: 100%;
           }

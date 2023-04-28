@@ -11,5 +11,7 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  scrollTop(e:any) {
+    window.scroll(0,0);
+  }
 }

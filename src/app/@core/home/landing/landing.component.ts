@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavigationEnd, Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
+import { filter, map } from 'rxjs/operators';
 import { CenterAuthService } from 'src/app/services/center-auth.service';
 
 import { HomeService } from 'src/app/services/home.service';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -15,6 +17,8 @@ export class LandingComponent implements OnInit {
   myForm!: FormGroup;
   open: boolean = true;
   typeChoice: any ='';
+  price:any;
+  priceItem:any;
   mainitemChanged(val:any){
 console.log(val);
     this.typeChoice=val;
@@ -76,7 +80,7 @@ data:any;
   headerImg: any;
   statistics:any
   loading: boolean =true;
-
+  submitted:boolean=false;
     homeReviews: OwlOptions = {
     rtl:true,
     loop: true,
@@ -131,12 +135,23 @@ data:any;
          }
       }
   };
-  constructor(private logo:HomeService  , private t:ToastrService , private formbuilder:FormBuilder  , private logIn:CenterAuthService) { }
+  constructor(private logo:HomeService ,private router:Router , private t:ToastrService , private formbuilder:FormBuilder  , private logIn:CenterAuthService) {
+    this.router.events.pipe(filter((event: any) => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    })
+  }
 
   ngOnInit(): void {
+    AOS.refresh();
+    AOS.init();
 
     this.getLogo()
     this.myForm = this.formbuilder.group({
+      type:['0' , Validators.required],
       name:['' , Validators.required],
       email: [
         '',
@@ -149,38 +164,83 @@ data:any;
       desc: ['', Validators.required],
     });
   }
+  routerCenter(){
+    this.router.navigate(['create_center'])
+  }
   getLogo(){
-    this.logo.showlandingPage().subscribe((res:any)=>{
-      console.log(res,'langing');
-this.data=res.content;
-this.headerImg=`http://admin.hqeba.com${this.data.header.image}`
+    this.logo.showlandingPage().pipe(map((data:any)=>data)).subscribe((res:any)=>{
+      console.log(res,'landing'  );
+
+this.data=res;
+this.headerImg=`https://admin.hqeba.sa${this.data.content.header.image}`
+this.price= res?.content.bundle
+// this.priceItem=this.price[1]
 
 this.loading=false
+
+
     })
       }
       submit() {
+       this.submitted=true;
         if (this.myForm.invalid) {
-          alert('no');
+          if(this.myForm.controls['name'].errors){
+            this.t.error('', 'من فضلك ادخل    الاسم' ,{
+              closeButton: true,
+              tapToDismiss:true,
+          disableTimeOut:true,
+          });
+          }
+          if(this.myForm.controls['email'].errors){
+            this.t.error('', 'من فضلك ادخل  البريد الالكتروني  بشكل صحيح' ,{
+              closeButton: true,
+              tapToDismiss:true,
+          disableTimeOut:true,
+          });
+          }
+          if(this.myForm.controls['desc'].errors){
+            this.t.error('', 'من فضلك ادخل   الوصف ' ,{
+              closeButton: true,
+              tapToDismiss:true,
+          disableTimeOut:true,
+          });
 
 
-          return;}
+
+        }
+          if(this.myForm.controls['type'].value == 0){
+            this.t.error('', 'من فضلك اختار الصفه    ' ,{
+              closeButton: true,
+              tapToDismiss:true,
+          disableTimeOut:true,
+          });
+          }
+
+        }else{
           let form = {
             ...this.myForm.value,
-            type:this.typeChoice
+
           };
           console.log(form);
           this.logIn.centerSupport(form).subscribe((data: any) => {
-            console.log(data);
+            console.log(data , "ssssss");
             if (data.status == 200) {
 this.t.success('تم ارسال الشكوي بنجاح',"تم بنجاح" ,{
   closeButton: true,
   tapToDismiss:true,
 disableTimeOut:true,
 });
+this.submitted=false;
 this.myForm.reset()
 this.typeChoice=''
             }
           });
+        }}
+        gotoCenter(item:any){
+
+
+          window.open(`https://h.hqeba.sa/${item?.domain}`,"_blank" , '')
+
         }
       }
 

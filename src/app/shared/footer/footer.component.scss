@@ -1,4 +1,10 @@
 .footer{
+  .logo  {
+    img{
+      width:120px ;
+      height: 50px;
+
+    }}
   background-image: url('../../../assets/images/landing/footer_bg.jpg');
  background-size: cover;
  background-repeat: no-repeat;
@@ -8,17 +14,24 @@ a , p{
   font-size: 24px !important;
   letter-spacing: -0.065em;
   color: #161616;
+  text-decoration:none ;
 }
   padding: 60px 0px;
   .footer_right{
       .footer_right_menu{
           list-style: none;
           padding: 0;
+          cursor: pointer;
+
+
           li{
             a{
+              transition: .4s;
               display: inline-block;
   line-height: 209% !important;
-
+  &:hover{
+    color: #6246EA;
+  }
             }
           }
       }
@@ -28,8 +41,8 @@ a , p{
           list-style: none;
           padding: 0;
           li{
-            p{
-              font-family: 'Poppins' !important;
+            p {
+              font-family: 'Tajawal';
               font-weight: 400;
               line-height: 179.5% !important;
 
@@ -51,9 +64,16 @@ ul{
           padding: 0;
           display: flex;
           li{
-              svg{
-                  margin-left: 10px
-              };
+             a{
+              display: inline-block;
+              width: 29px;
+              height: 29px;
+              background-size: cover;
+              background-position:center ;
+              border-radius: 50px;
+              overflow: hidden;
+              margin-left: 10px;
+             }
           }
 }
   }

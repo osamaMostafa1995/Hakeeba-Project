@@ -1,23 +1,35 @@
+
 <section class="center_create">
   <div class="container">
     <div class="row">
       <div class="col-lg-1"></div>
       <div class="col-lg-4">
         <div class="form_info">
-          <div class="buttons_steps_create mb-5">
-            <div class="btn btn_info text-primary" type="button">
-              <span
-                class="bg-primary text-white"
+          <ul class="nav nav-tabs mb-5" id="myTab" role="tablist">
+            <li class="nav-item " role="presentation"(click)="step1=true" >
+              <button class="nav-link  btn btn_info " [ngClass]="step1?'text-primary' :' bg-primary text-white'" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"> <span
+                [ngClass]="step1?'bg-primary text-white' :' bg-white text-gray'"
                 style="padding: 2px 10px; border-radius: 50%; margin-left: 2px"
+                *ngIf=" step1==true "
               >
                 1
               </span>
-              <span style="margin-right: 10px"> المعلومات</span>
-            </div>
-
-            <button class="btn btn_info_center text-form_color" type="button" (click)="route()">
               <span
-                class="bg-white text-gray"
+              *ngIf=" step1==false "
+              class="bg-white "
+              style="padding: 3px 9px; border-radius: 50%; margin-left: 2px"
+            >
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.43495 4.21962C1.27731 4.06849 1.06351 3.98358 0.840575 3.98358C0.617641 3.98358 0.403837 4.06849 0.246199 4.21962C0.0885604 4.37076 0 4.57575 0 4.78949C0 5.00323 0.0885604 5.20821 0.246199 5.35935L2.75765 7.76723C2.83587 7.84161 2.92864 7.90047 3.03064 7.94041C3.13263 7.98035 3.24185 8.0006 3.35202 7.99999C3.46663 7.9965 3.57926 7.97048 3.68295 7.92354C3.78663 7.8766 3.87915 7.80973 3.95477 7.72709L9.81482 1.30609C9.95012 1.14503 10.0154 0.940105 9.99694 0.734049C9.97851 0.527993 9.87783 0.33671 9.71589 0.200084C9.55396 0.0634581 9.34327 -0.00796505 9.12775 0.000706509C8.91223 0.00937807 8.70852 0.0974753 8.55909 0.246629L3.35202 6.02553L1.43495 4.21962Z" fill="#6246EA"/>
+              </svg>
+
+            </span>
+              <span style="margin-right: 5px"> المعلومات</span></button>
+            </li>
+            <!-- (click)="step1=false" -->
+            <li class="nav-item" role="presentation" >
+              <button class="nav-link btn btn_info_center "[ngClass]="step1?'text-form_color' :' text-primary'" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"> <span
+                [ngClass]="step1?'bg-white text-gray' :'bg-primary text-white'"
                 style="
                   padding: 2px 10px;
                   border-radius: 50%;
@@ -28,95 +40,315 @@
                 2
               </span>
 
-              <span style="margin-right: 10px"> معلومات الخاصة بالمركز </span>
-            </button>
-          </div>
-          <h5
-            class="section_pragraph text-black mb-4"
-            style="font-weight: 700 !important"
-          >
-          أدخل المعلومات التالية
-          </h5>
-          <form class="form">
-            <div class="mb-4" style="position: relative">
-              <details class="custom-select carousel_p" style="z-index: 5">
-                <summary class="radios input">
-                  <input
-                    type="radio"
-                    name="item"
-                    id="default"
-                    title="الدوله"
-                    class="text-gray"
-                    checked
-                  />
-                  <input
-                    type="radio"
-                    name="item"
-                    id="item1"
-                    title="الاختيار الاول"
-                  />
-                  <input type="radio" name="item" id="item2" title="Item 2" />
-                  <input type="radio" name="item" id="item3" title="Item 3" />
-                  <input type="radio" name="item" id="item4" title="Item 4" />
-                  <input type="radio" name="item" id="item5" title="Item 5" />
-                </summary>
-                <ul class="list">
-                  <li>
-                    <label for="item1">
-                      الاختيار الاول
-                      <span></span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="item2">Item 2</label>
-                  </li>
-                  <li>
-                    <label for="item3">Item 3</label>
-                  </li>
-                  <li>
-                    <label for="item4">Item 4</label>
-                  </li>
-                  <li>
-                    <label for="item5">Item 5</label>
-                  </li>
-                </ul>
-              </details>
-            </div>
-            <div class="mb-4">
-              <ngx-mat-intl-tel-input
-                [enablePlaceholder]="true"
-                inputPlaceholder="رقم الهاتف"
-                [preferredCountries]="['eg', 'sa', 'sy', 'jo', 'ps', 'tr']"
-                [enablePlaceholder]="true"
-                [preferredCountries]="['sa', 'gb']"
-                [enablePlaceholder]="true"
-                [enableSearch]="true"
-                name="phone"
-                describedBy="phoneInput"
-                class="carousel_p"
-              ></ngx-mat-intl-tel-input>
-            </div>
-            <div class="mb-4" style="position: relative">
-              <input
-                placeholder=" المؤهل العلمى"
-                type="text"
-                class="form-control carousel_p input"
-                id="exampleInputPassword1"
-              />
+              <span style="margin-right: 4px"> معلومات الخاصة بالمركز </span></button>
+            </li>
+
+          </ul>
+
+ <form class="form"  [formGroup]="myForm">
+<ng-container *ngIf="step1">
+  <h4 class="text-black section_pragraph fw-blod mb-4" ><b>أدخل المعلومات التالية</b></h4>
+  <div class="mb-4" style="position: relative">
+    <div class="select carousel_p " (click)="log()">
+      <img class="img"  src="assets/images/icons/down-arrow.png" alt="">
+      <select  [ngClass]="{'is-invalid': submitted && myForm.get('country_id')?.errors}"  formControlName="country_id" name="format" id="format" #select  (change)="getCountryCode(select.value )" >
+        <option  style="color: #959595 !important ;"  value="" disabled selected  >الدولة  <span class="small text-danger">(required)</span></option>
+<option  *ngFor="let item of counrtries ; let i=index" [value]="item.id" >{{item.name}}</option>
+      </select>
+   </div>
+  </div>
+  <div class="mb-4" style="position: relative">
+    <span class="code d-flex justify-content-between align-items-center">
+      {{this.code ? this.code:'code'}}
+      <span class="flag" *ngIf="!cityImg"></span>
+     <!-- <img class="flag_img"[src]="cityImg" *ngIf="cityImg" alt=""> -->
+     <span class="flag_img" style="background-image: url({{cityImg}})"  *ngIf="cityImg"></span>
+    </span>
+   <input
+ [ngClass]="{'is-invalid': submitted && myForm.get('phone')?.errors}"  formControlName="phone"
+
+      placeholder=" رقم الهاتف (required)"
+      type="text"
+      class="form-control carousel_p input"
+
+    />
+  </div>
+  <div class="mb-4" style="position: relative">
+    <input
+
+      placeholder="المؤهل العلمي (optional)"
+      type="text"
+      class="form-control carousel_p input"
+
+      formControlName="qualification"
+    />
+  </div>
+
+  <div class="btns">
+    <button  (click)="centerStep2()" class="btn btn-primary text-white carousel_p mt-5">
+    متابعه
+    </button>
+  </div>
+</ng-container>
+
+  <ng-container *ngIf="!step1">
+    <h5
+  class="section_pragraph text-black mb-4"
+  style="font-weight: 700 !important"
+>
+<b>أدخل معلومات المركز
+</b>      </h5>
+  <div class="mb-4 center_logo" style="position: relative">
+    <div class="row">
+      <div class="col-lg-6">
+
+          <label for="exampleInputEmail1" class="form-label carousel_p">شعار المركز  <span class="small">(optional)</span></label>
+        <button class="form-control input " style="position:relative ;overflow: hidden;">
+          <input type="file" style="position:absolute ; width: auto;opacity: 0;" #fileInput class="form-control"  (change)="selec($event)" accept=".png, .jpg, .jpeg" />
+          <svg  width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.205C11.9922 5.1361 11.9771 5.06822 11.955 5.0025V4.935C11.9189 4.85788 11.8708 4.787 11.8125 4.725L7.3125 0.225C7.2505 0.166662 7.17962 0.118561 7.1025 0.0824999H7.035C6.95881 0.0388059 6.87467 0.0107582 6.7875 0H2.25C1.65326 0 1.08097 0.237053 0.65901 0.65901C0.237053 1.08097 0 1.65326 0 2.25V12.75C0 13.3467 0.237053 13.919 0.65901 14.341C1.08097 14.7629 1.65326 15 2.25 15H9.75C10.3467 15 10.919 14.7629 11.341 14.341C11.7629 13.919 12 13.3467 12 12.75V5.25C12 5.25 12 5.25 12 5.205ZM7.5 2.5575L9.4425 4.5H8.25C8.05109 4.5 7.86032 4.42098 7.71967 4.28033C7.57902 4.13968 7.5 3.94891 7.5 3.75V2.5575ZM10.5 12.75C10.5 12.9489 10.421 13.1397 10.2803 13.2803C10.1397 13.421 9.94891 13.5 9.75 13.5H2.25C2.05109 13.5 1.86032 13.421 1.71967 13.2803C1.57902 13.1397 1.5 12.9489 1.5 12.75V2.25C1.5 2.05109 1.57902 1.86032 1.71967 1.71967C1.86032 1.57902 2.05109 1.5 2.25 1.5H6V3.75C6 4.34674 6.23705 4.91903 6.65901 5.34099C7.08097 5.76295 7.65326 6 8.25 6H10.5V12.75Z" fill="#6246EA"/>
+            </svg>
+            <span class="text-primary carousel_p">
+          {{fileLogo?'تم الرفع':' رفع الملف'}}
+
+            </span>
+        </button>
+
+        </div>
+        <div class="col-lg-6">
+
+          <label for="exampleInputEmail1" class="form-label carousel_p">صورة الغلاف  <span class="small">(optional)</span></label>
+          <button class="form-control input " style="position:relative ;overflow: hidden;">
+            <input type="file" style="position:absolute ; width: auto;opacity: 0;" #fileInput class="form-control"  (change)="selectback($event)" accept=".png, .jpg, .jpeg" />
+            <svg  width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5.205C11.9922 5.1361 11.9771 5.06822 11.955 5.0025V4.935C11.9189 4.85788 11.8708 4.787 11.8125 4.725L7.3125 0.225C7.2505 0.166662 7.17962 0.118561 7.1025 0.0824999H7.035C6.95881 0.0388059 6.87467 0.0107582 6.7875 0H2.25C1.65326 0 1.08097 0.237053 0.65901 0.65901C0.237053 1.08097 0 1.65326 0 2.25V12.75C0 13.3467 0.237053 13.919 0.65901 14.341C1.08097 14.7629 1.65326 15 2.25 15H9.75C10.3467 15 10.919 14.7629 11.341 14.341C11.7629 13.919 12 13.3467 12 12.75V5.25C12 5.25 12 5.25 12 5.205ZM7.5 2.5575L9.4425 4.5H8.25C8.05109 4.5 7.86032 4.42098 7.71967 4.28033C7.57902 4.13968 7.5 3.94891 7.5 3.75V2.5575ZM10.5 12.75C10.5 12.9489 10.421 13.1397 10.2803 13.2803C10.1397 13.421 9.94891 13.5 9.75 13.5H2.25C2.05109 13.5 1.86032 13.421 1.71967 13.2803C1.57902 13.1397 1.5 12.9489 1.5 12.75V2.25C1.5 2.05109 1.57902 1.86032 1.71967 1.71967C1.86032 1.57902 2.05109 1.5 2.25 1.5H6V3.75C6 4.34674 6.23705 4.91903 6.65901 5.34099C7.08097 5.76295 7.65326 6 8.25 6H10.5V12.75Z" fill="#6246EA"/>
+              </svg>
+              <span class="text-primary carousel_p">
+                {{filebackground?'تم الرفع':' رفع الملف'}}
+              </span>
+          </button>
+        </div>
+
+    </div>
+    <!-- <details class="custom-select carousel_p" style="z-index: 5">
+      <summary class="radios input">
+        <input
+          type="radio"
+          name="item"
+          id="default"
+          title="الدوله"
+          class="text-gray"
+          checked
+        />
+        <input
+          type="radio"
+          name="item"
+          id="item1"
+          title="الاختيار الاول"
+        />
+        <input type="radio" name="item" id="item2" title="Item 2" />
+        <input type="radio" name="item" id="item3" title="Item 3" />
+        <input type="radio" name="item" id="item4" title="Item 4" />
+        <input type="radio" name="item" id="item5" title="Item 5" />
+      </summary>
+      <ul class="list">
+        <li>
+          <label for="item1">
+            الاختيار الاول
+            <span></span>
+          </label>
+        </li>
+        <li>
+          <label for="item2">Item 2</label>
+        </li>
+        <li>
+          <label for="item3">Item 3</label>
+        </li>
+        <li>
+          <label for="item4">Item 4</label>
+        </li>
+        <li>
+          <label for="item5">Item 5</label>
+        </li>
+      </ul>
+    </details> -->
+  </div>
+
+    <div class="mb-4" style="position: relative">
+      <input
+       [ngClass]="{'is-invalid': complate && submitted && myForm.get('name')?.errors}"  formControlName="name"
+        placeholder="اسم المركز (required)"
+        type="text"
+        class="form-control carousel_p input"
+        id="exampleInputPassword1"
+      />
+    </div>
+
+  <div class="mb-4 center_link" style="position: relative;" >
+
+      <label for="exampleInputEmail1" class="form-label carousel_p text-black">رابط الموقع <span class="small text-danger">(required)</span></label>
+      <input style="padding-left: 128px;" dir="ltr" [ngClass]="{'is-invalid': complate && submitted && myForm.get('domain')?.errors}"  formControlName="domain"  type="email" class="form-control input  input_link carousel_p " placeholder="your center name" id="exampleInputEmail1" aria-describedby="emailHelp">
+<span style="    position: absolute;
+left: 22px;
+top: 52px;" class="text-black">/https://hqeba.sa</span>
+
+
+  </div>
+ <div class="mb-4" style="position: relative">
+    <div class="select carousel_p " (click)="openSpec=!openSpec">
+      <img class="" [ngClass]="openSpec?'img_rotate':'img'" src="assets/images/icons/down-arrow.png" alt="">
+      <select  style="color: #959595 !important ;" name="format" id="format" #select   >
+        <option value="" disabled selected>  اختصاص المركز التدريبى <span class="small">(optional)</span> </option>
+<option   [value]="item?.id" *ngFor="let item of spec" >{{item?.name}}</option>
+
+      </select>
+   </div>
+  </div>
+  <div class="mb-4" style="position: relative">
+    <div class="select carousel_p " (click)="openReson=!openReson">
+      <img class="" [ngClass]="openReson?'img_rotate':'img'" src="assets/images/icons/down-arrow.png" alt="">
+      <select  style="color: #959595 !important ;"  name="format" id="format" #select  formControlName="reason"  >
+        <option value="" disabled selected>  ما هو السبب لانشاءك مركز تدريبي <span class="small">(optional)</span></option>
+<option   [value]="'نشر الدورات'" >نشر الدورات</option>
+<option   [value]="'تقديم خدمات التعليم عن بعد'" >تقديم خدمات التعليم عن بعد</option>
+
+      </select>
+   </div>
+  </div>
+  <div class="mb-4">
+    <label for="exampleInputEmail1" class="form-label text-black carousel_p"> هل تم توثيق سجلك التجاري <span class="small">(optional)</span></label>
+    <div class="row">
+      <div class="col-6">
+        <button (click)="authorization='1'" style="border:none;opacity: 0.77;font-weight:500" class="btn  carousel_p " [ngClass]="authorization==1?'btn-primary  text-white':'btn-primary  bg-form_input text-gray'">
+          نعم
+        </button>              </div>
+      <div class="col-6">
+        <button (click)="authorization=0" style="border:none" class="btn  carousel_p" [ngClass]="authorization==0?'btn-primary  text-white':'btn-primary  bg-form_input text-gray'">
+          لا
+        </button>              </div>
+    </div>
+
+  </div>
+  <div class="mb-4" style="position: relative">
+    <input
+    formControlName="link"
+      placeholder="اضافة رابط (optional) "
+      type="text"
+      class="form-control carousel_p input"
+      id="exampleInputPassword1"
+    />
+  </div>
+  <div class="mb-4">
+    <label for="exampleInputEmail1" class="form-label text-black carousel_p">    وصف المركز <span class="small">(optional)</span> </label>
+    <textarea class="form-control input" cols="10" rows="10" formControlName="desc"></textarea>
+
+
+  </div>
+  <div class="btns">
+    <button class="btn btn-primary text-white carousel_p mt-5" (click)="createCenter()">
+      أنهاء
+    </button>
+  </div>
+  </ng-container>
+
+ </form>
+          <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+            <form class="form">
+
+            </form>
             </div>
 
-            <div class="btns">
-              <button class="btn btn-primary text-white carousel_p mt-5">
-                أنهاء
-              </button>
-            </div>
-          </form>
+          </div>
+
+
         </div>
       </div>
       <div class="col-lg-1"></div>
-      <div class="col-lg-6">
-        <div class="image">
-          <img src="assets/images/landing/center_img.svg" alt="" />
+      <div class="col-lg-6 d-none d-lg-block">
+        <div class="image" *ngIf="!step1">
+          <svg width="527" height="874" viewBox="0 0 527 874" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_0_1)">
+            <path d="M78.2398 446.858C77.654 452.57 66.5646 534.963 64.2695 554.93C61.9744 574.896 47.0805 626.961 42.8281 634.182C47.2735 636.938 60.4512 644.296 60.4512 644.296C60.4512 644.296 100.619 582.426 102.259 576.536C103.899 570.645 110.881 542.163 110.881 542.163L101.273 441.346L78.2398 446.858Z" fill="#3B3744"/>
+            <path d="M351.968 124.476C392.673 159.228 424.066 204.396 422.681 247.629C421.296 290.862 387.228 332.469 357.812 370.383C328.397 408.297 303.544 442.352 266.609 465.419C229.674 488.486 180.747 500.191 140.841 486.005C100.936 471.819 70.0313 431.859 50.4232 389.488C30.8151 347.116 22.1999 302.271 37.6521 269.903C53.1042 237.536 92.6099 217.542 125.589 181.502C158.568 145.462 185.102 93.1003 223.305 79.2314C261.508 65.3625 311.366 89.7313 351.968 124.476Z" fill="#F0F0F0"/>
+            <path d="M73.1814 342.417C70.4796 338.614 64.3525 322.231 64.3525 318.992C64.3525 315.754 82.9613 250.922 84.133 245.411C85.3046 239.899 85.2702 224.308 84.133 219.175C84.6292 217.259 85.9456 216.639 86.2902 217.797C87.1931 218.527 92.3277 221.607 92.3277 221.607C92.3277 221.607 104.334 238.142 101.653 241.876C99.4567 244.837 97.535 247.992 95.9116 251.301C95.2638 255.47 85.7871 309.175 86.2626 312.619C86.7382 316.064 96.2838 333.433 96.5319 334.666C94.4712 335.762 74.3944 343.692 73.1814 342.417Z" fill="white"/>
+            <path d="M72.1954 276.208C76.6133 260.313 80.852 245.204 81.3758 242.655C82.513 237.143 82.513 221.552 81.3758 216.419C81.872 214.503 83.1884 213.883 83.533 215.041" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M70.4245 339.661C67.7228 335.858 61.5957 319.475 61.5957 316.236C61.5957 315.017 64.2699 304.951 67.6539 292.619" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M378.372 -0.0122309L51.4366 84.0222L126.442 375.623L453.377 291.589L378.372 -0.0122309Z" fill="#EAF0FF"/>
+            <path d="M136.744 62.0892L51.4377 84.0161L126.443 375.617L211.75 353.69L136.744 62.0892Z" fill="#D8DFFF"/>
+            <path d="M104.954 142.589C120.023 142.589 132.24 130.377 132.24 115.313C132.24 100.248 120.023 88.0364 104.954 88.0364C89.8841 88.0364 77.6678 100.248 77.6678 115.313C77.6678 130.377 89.8841 142.589 104.954 142.589Z" fill="#EAF0FF"/>
+            <path d="M147.929 148.17L83.8155 164.65L85.3997 170.809L149.513 154.329L147.929 148.17Z" fill="#EAF0FF"/>
+            <path d="M151.745 162.998L87.6317 179.478L89.2159 185.637L153.329 169.157L151.745 162.998Z" fill="#EAF0FF"/>
+            <path d="M226.207 190.059C230.394 190.059 233.789 186.666 233.789 182.48C233.789 178.295 230.394 174.902 226.207 174.902C222.02 174.902 218.626 178.295 218.626 182.48C218.626 186.666 222.02 190.059 226.207 190.059Z" fill="#B2C3FB"/>
+            <path d="M364.713 143.585L243.188 174.821L244.772 180.98L366.298 149.744L364.713 143.585Z" fill="#D8DFFF"/>
+            <path d="M337.148 36.3821L190.418 74.0972L215.207 170.47L361.937 132.755L337.148 36.3821Z" fill="white"/>
+            <path d="M261.267 326.385C265.454 326.385 268.848 322.992 268.848 318.806C268.848 314.621 265.454 311.228 261.267 311.228C257.08 311.228 253.686 314.621 253.686 318.806C253.686 322.992 257.08 326.385 261.267 326.385Z" fill="#B2C3FB"/>
+            <path d="M399.784 279.91L278.259 311.146L279.843 317.305L401.368 286.068L399.784 279.91Z" fill="#D8DFFF"/>
+            <path d="M372.21 172.707L225.48 210.422L250.269 306.795L396.999 269.08L372.21 172.707Z" fill="white"/>
+            <path d="M39.4578 639.514L32.6691 651.468L24.1711 658.013L47.3975 685H66.4543L54.0416 665.847L56.1368 649.002" fill="white"/>
+            <path d="M126.712 658.558L130.048 670.642L127.697 685H178.975L148.87 667.232L149.601 658.558" fill="white"/>
+            <path d="M63.5251 529.817C62.3259 539.173 61.3472 546.945 60.8234 551.485C58.5352 571.465 43.6344 623.537 39.382 630.716C43.8274 633.472 57.0052 640.83 57.0052 640.83C57.0052 640.83 97.1725 578.961 98.8128 573.07C100.453 567.18 107.435 538.698 107.435 538.698L97.8273 437.902L74.7938 443.413C74.5043 446.273 71.582 468.299 68.453 492.103" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M118.104 650.228H152.089" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M118.104 655.802H152.089" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M169.96 682.244H176.218L146.113 664.476L146.844 655.802" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M123.955 655.802L127.291 667.886L124.941 682.244H155.011" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M35.0195 628.422L59.0248 642.07" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M32.6346 634.444L56.6468 648.099" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M52.9255 665.626L51.2852 663.091L53.3804 646.246" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M32.1314 644.799L29.9122 648.712L21.4142 655.257L44.6407 682.244H63.6974L58.7764 674.652" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M88.3984 451.853C88.3984 455.298 91.2656 496.25 101.08 528.673C107.565 559.635 126.374 653.673 126.374 653.673H150.29L141.682 443.606L88.3984 451.853Z" fill="#3B3744"/>
+            <path d="M110.881 590.232C117.139 621.291 122.929 650.228 122.929 650.228H146.844L138.236 440.161L84.9531 448.429C84.9531 451.874 87.8203 492.826 97.6346 525.249C99.1096 532.283 101.219 542.57 103.596 554.275" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M170.298 359.215C175.812 362.136 193.359 370.066 195.475 370.066C197.591 370.066 227.868 360.076 229.467 357.024C231.066 353.971 232.72 345.842 235.491 345.029C238.261 344.216 236.697 351.367 236.697 351.367C238.337 350.83 264.231 344.085 264.114 344.223C264.803 347.929 250.791 358.436 249.33 358.815C242.128 366.89 197.281 392.023 195.33 392.023C193.38 392.023 163.082 383.756 161.173 383.067C161.552 380.249 167.679 361.206 170.298 359.215Z" fill="white"/>
+            <path d="M95.5938 245.128C97.3237 242.813 99.2397 240.305 99.1501 236.73" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M93.306 330.705C91.9276 326.516 83.7466 312.902 83.533 309.347C83.3262 305.902 91.4727 257.757 92.9476 250.337" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M97.0137 380.352C87.4819 384.486 65.9991 350.23 70.672 344.781C77.2057 337.271 95.6077 331.49 101.914 333.922C105.098 338.284 113.224 373.359 97.0137 380.352Z" fill="#6246EA"/>
+            <path d="M94.2569 377.596C84.725 381.73 63.2423 347.474 67.9151 342.025C74.4489 334.515 92.8509 328.735 99.1572 331.167C102.341 335.528 110.467 370.603 94.2569 377.596Z" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M183.503 387.621C187.686 388.592 191.084 389.26 192.228 389.26C195.805 389.26 237.772 365.036 246.228 356.259C254.368 351.539 259.489 346.269 261.356 342.211" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M159.464 381.11C160.953 381.675 164.406 382.694 168.555 383.824" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M211.382 361.398C218.888 358.643 225.952 355.701 226.71 354.268C228.337 351.215 229.963 343.086 232.734 342.273C235.505 341.46 233.94 348.611 233.94 348.611" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M167.541 356.458C173.055 359.38 190.602 367.31 192.718 367.31C194.005 367.096 195.272 366.781 196.509 366.366" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M116.477 339.365C148.243 339.365 150.683 402.385 141.889 451.233C133.336 454.678 84.9597 456.118 76.8959 448.298C73.9667 437.557 63.5389 339.372 116.477 339.365Z" fill="#6246EA"/>
+            <path d="M74.0908 380.359C78.5844 357.086 89.5498 336.609 113.721 336.609C135.472 336.609 143.474 366.166 143.536 400.484" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M76.0206 446.858C75.3358 446.508 74.7026 446.065 74.139 445.542C73.119 441.815 71.203 427.567 71.3408 410.542" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M142.564 422.579C141.813 431.37 140.634 440.127 139.118 448.477C134.294 450.393 117.015 451.695 101.308 451.095" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M121.811 353.034C124.782 342.3 168.519 347.185 169.987 354.757C171.945 365.257 164.37 384.555 158.016 388.213C152.151 387.972 116.753 371.306 121.811 353.034Z" fill="#6246EA"/>
+            <path d="M164.722 349.211C166.163 350.072 167.066 351.016 167.259 352.001C169.216 362.501 161.642 381.799 155.287 385.457C153.412 385.382 141.854 380.256 136.244 377.314" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M118.593 354.757C118.495 353.249 118.651 351.735 119.055 350.279C120.929 343.513 138.973 342.948 152.44 345.352" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M118.821 346.482C118.821 349.286 101.039 349.645 101.039 346.482V321.266H118.821V346.482Z" fill="white"/>
+            <path d="M116.063 335.617V343.726" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M108.751 345.917C103.851 346.165 98.2822 345.497 98.2822 343.727V318.51H116.064V329.83" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M114.051 326.764C124.093 326.764 132.233 316.063 132.233 302.864C132.233 289.664 124.093 278.963 114.051 278.963C104.01 278.963 95.8699 289.664 95.8699 302.864C95.8699 316.063 104.01 326.764 114.051 326.764Z" fill="white"/>
+            <path d="M123.81 318.262C120.633 321.845 116.498 324.008 111.983 324.008C101.941 324.008 93.7949 313.308 93.7949 300.108C93.7949 286.907 101.941 276.208 111.983 276.208C122.025 276.208 130.165 286.907 130.165 300.108C130.2 304.418 129.292 308.683 127.504 312.606" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M92.7197 305.468C92.7197 286.432 99.0398 268.209 105.408 268.209C111.776 268.209 108.268 277.241 108.268 277.241C110.915 271.95 119.096 263.772 122.673 263.772C126.25 263.772 127.118 269.283 123.452 274.905C125.045 273.131 126.974 271.688 129.126 270.659C131.279 269.63 133.613 269.037 135.995 268.911C140.131 268.911 140.668 273.817 140.668 278.647C140.668 287.183 122.749 300.287 120.729 302.547C120.571 305.351 118.234 328.163 112.548 328.163C106.862 328.163 92.7197 326.764 92.7197 305.468Z" fill="#E45858"/>
+            <path d="M115.94 318.924C114.727 322.644 113.148 325.407 111.17 325.407C107.972 325.407 102.1 324.966 97.5723 320.791" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M137.843 280.645C134.528 286.845 126.264 293.783 121.915 297.483" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M129.903 267.03C131.419 266.492 133.01 266.196 134.617 266.156C138.064 266.156 139.008 269.566 139.228 273.493" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M91.3693 300.39C91.8518 282.215 97.9237 265.439 104.03 265.439C110.392 265.439 106.89 274.471 106.89 274.471C109.537 269.18 117.718 261.002 121.295 261.002C124.872 261.002 125.74 266.514 122.074 272.136" fill="#E45858"/>
+            <path d="M91.3693 300.39C91.8518 282.215 97.9237 265.439 104.03 265.439C110.392 265.439 106.89 274.471 106.89 274.471C109.537 269.18 117.718 261.002 121.295 261.002C124.872 261.002 125.74 266.514 122.074 272.136" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M121.557 311.276C124.75 311.276 127.339 308.688 127.339 305.496C127.339 302.303 124.75 299.715 121.557 299.715C118.363 299.715 115.774 302.303 115.774 305.496C115.774 308.688 118.363 311.276 121.557 311.276Z" fill="white"/>
+            <path d="M114.41 304.731C114.4 304.527 114.4 304.322 114.41 304.118C114.405 303.115 114.662 302.129 115.154 301.255C115.646 300.382 116.357 299.652 117.218 299.137C118.078 298.621 119.058 298.339 120.06 298.317C121.063 298.296 122.054 298.535 122.936 299.012" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M121.818 309.664C121.286 309.824 120.734 309.906 120.178 309.905C118.691 309.908 117.261 309.335 116.188 308.307" stroke="#1B3C87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M453.785 74.9185H415.713L434.749 107.872L453.785 74.9185Z" stroke="#B6C6FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M31.6243 124.083L17.9969 115.307L0.68555 142.17L14.3129 150.945L31.6243 124.083Z" stroke="#B6C6FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M434.902 397L432 456.596L485.083 429.306L434.902 397Z" fill="#EAF0FF"/>
+            </g>
+            <path d="M92.9016 732L90 791.596L143.083 764.306L92.9016 732Z" fill="#EAF0FF"/>
+            <path d="M216.537 818.872L171 857.401L222.65 873.156L216.537 818.872Z" fill="#F0F0F0"/>
+            <path d="M423.879 658.638L336.015 626.704L276 791.713L363.865 823.648L423.879 658.638Z" fill="#EAF0FF"/>
+            <path d="M331.666 645.913C340.482 645.913 347.628 638.769 347.628 629.957C347.628 621.144 340.482 614 331.666 614C322.851 614 315.704 621.144 315.704 629.957C315.704 638.769 322.851 645.913 331.666 645.913Z" stroke="#B6C6FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+            <clipPath id="clip0_0_1">
+            <rect width="527" height="685" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+
+        </div>
+        <div class="image" *ngIf="step1">
+          <img src="assets/images/landing/center_img.svg" style="width: 100%;" alt="" />
+
         </div>
       </div>
     </div>

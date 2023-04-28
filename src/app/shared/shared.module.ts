@@ -5,10 +5,11 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { SharedDialogComponent } from './shared-dialog/shared-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { TrailPeriodComponent } from './trail-period/trail-period.component';
+
 import { HaqebaPaymentComponent } from './haqeba-payment/haqeba-payment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
+import { CenterHeaderComponent } from './center-header/center-header.component';
 
 
 @NgModule({
@@ -16,9 +17,10 @@ import { LoaderComponent } from './loader/loader.component';
     HeaderComponent,
     FooterComponent,
     SharedDialogComponent,
-    TrailPeriodComponent,
+
     HaqebaPaymentComponent,
-    LoaderComponent
+    LoaderComponent,
+    CenterHeaderComponent
   ],
   imports: [
     CommonModule,

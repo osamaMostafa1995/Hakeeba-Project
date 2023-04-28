@@ -33,8 +33,11 @@ export class SignInComponent implements OnInit {
   ) {}
   myForm!: FormGroup;
   ngOnInit(): void {
+
     this.loading=false;
-    this.openDialog();
+   setTimeout(() => {
+     this.openDialog();
+   }, 500);
     this.myForm = this.formbuilder.group({
       email: [
         '',
@@ -109,7 +112,7 @@ this.logIn.ForgetPassword({email:this.myForm.value.email}).subscribe((data:any)=
               tapToDismiss:true,
             disableTimeOut:true,
             });
-             window.open(`http://admin.hqeba.com${data.content.link}`, "_blank");
+             window.open(`https://admin.hqeba.sa${data.content.link}`, "_blank");
           } else if( this.type=='coach'&&data.content.type==1){
             this.myForm.reset();
             this.submitted=false
@@ -119,7 +122,7 @@ this.logIn.ForgetPassword({email:this.myForm.value.email}).subscribe((data:any)=
             disableTimeOut:true,
             });
 
-             window.open(`http://admin.hqeba.com${data.content.link}`, "_blank");
+             window.open(`https://admin.hqeba.sa${data.content.link}`, "_blank");
           }
           else {
             this.submitted=false
@@ -140,21 +143,31 @@ this.logIn.ForgetPassword({email:this.myForm.value.email}).subscribe((data:any)=
 
 signUp(){
    if( this.type=='center'){
-    // alert('تم التسجيل بنجاح كمركز')
-    this.router.navigate(['/create_center'] )
-  }else if( this.type=='coach'){
-    alert('تم التسجيل بنجاح كمدرب')
+
+    this.router.navigate(['create_center'] )
   }
+  // else if( this.type=='coach'){
+  //   // this.router.navigate(['create_center'] )
+  // }
 }
   openDialog() {
     const dialogRef = this.dialog.open(SharedDialogComponent, {
-      width: '40%',
+      // width: '40%',
+      data:{from:'sign_in'},
       panelClass: 'custom-modalbox',
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(result.data);
-      this.type=result.data
+      console.log(result?.data);
+     if(result?.data !=undefined){
+      this.type=result?.data
+     }else{
+      this.type='center'
+     }
+  console.log(
+    this.type
+  );
+
     });
   }
 }

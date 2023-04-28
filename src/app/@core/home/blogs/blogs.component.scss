@@ -1,8 +1,67 @@
 .blogs{
+
+  .main_blog{
+    img{
+      width: 100%;
+        border-radius: 15px;
+    }
+    .card{
+      &:hover{
+        .card-title{
+        color: #6246EA !important;
+        }
+      }
+        background: none;
+        border: none;
+        .card-body{
+          .section {
+            line-height: 179.5% !important;
+            letter-spacing: -0.01em !important;
+            font-weight: 500 !important;
+          font-size: 20px  ;
+
+          }
+            padding: 0px 30px !important;
+            .card-text{
+
+               width: 97%;
+
+
+            }
+            .card-title{
+
+  color: #030303;
+  transition: .3s;
+  cursor: pointer;
+  &:hover{
+    color: #6246EA;
+  }
+            }
+           .text-muted{
+            font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 247% !important;
+  letter-spacing: 0.01em;
+  color: #E45858 !important;
+
+
+           }
+        }
+    }
+    @media (max-width:1024px){
+.section {
+  width: 100% !important;
+  font-size: 15px !important;
+}
+    }
+  }
+/////////////////////////////////////////////////
   .blogs_toggle{
       ul{
           border: none;
           padding-right: 0;
+
           li{
 
 .nav-link{
@@ -24,6 +83,63 @@ color: #898989;
   background: #E7E2FF;
 }
           }
+      }
+  }
+  @media (max-width:768px){
+  .blogs_toggle{
+ul{
+
+ display: flex;
+ justify-content: center;
+ li{
+  margin-bottom: 10px;
+
+ }
+}
+  }
+        }
+
+}
+.all_blogs{
+
+
+  img{
+      width: 100%;
+      border-radius: 15px;
+  }
+  .card{
+    &:hover{
+      .card-title{
+      color: #6246EA !important;
+      }
+    }
+      background: none;
+      border: none;
+      .card-body{
+        .card-title{
+          transition: .3s;
+          cursor: pointer;
+          &:hover{
+            color: #6246EA !important;
+          }
+        }
+          padding: 5px 0px 0px;
+          .carousel_p{
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            line-height: 183.5% !important;
+          }
+
+         .text-muted{
+          font-family: 'Poppins';
+font-weight: 600;
+font-size: 15px;
+line-height: 247%;
+letter-spacing: 0.01em;
+color: #E45858 !important;
+
+
+         }
       }
   }
 }

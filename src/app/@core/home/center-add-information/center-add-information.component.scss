@@ -1,6 +1,102 @@
 .center_create{
-  padding: 80px 0px ;
+  .small{
+    color: #6246EA !important;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+  padding: 200px 0px ;
   min-height: 1000px;
+  textarea{
+    padding-top: 20px !important;
+    min-height: 130px;
+    border-radius: 20px !important;
+  }
+  img {
+    width: 100%;
+    padding: 0px 50px;
+  }
+  .form_info{
+    .nav-tabs{
+      width: 326px;
+      height: 50px;
+      background: #FFFFFF;
+      border: 0.970037px solid #E8E8E8;
+      border-radius: 97.0037px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      .nav-item {
+        .btn_info{
+          width: 114px;
+        }
+        .btn_info_center{
+          width: 179px;
+        }
+        .btn{
+          font-size: 13px !important;
+          padding: 6px 4px 6px 7px;
+          height: 34px;
+          background: #E7E2FF;
+    border-radius: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  }
+      }
+    }
+  }
+//   .buttons_steps_create {
+//     height: 50px;
+//     background: #FFFFFF;
+//     border: 0.970037px solid #E8E8E8;
+//     border-radius: 97.0037px;
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+
+//     .btn{
+//       font-size: 14px !important;
+//       padding: 6px 4px 6px 20px;
+//       height: 34px;
+//       background: #E7E2FF;
+// border-radius: 23px;
+// display: flex;
+// align-items: center;
+// justify-content: flex-start;  }
+//   }
+.code{
+  position: absolute;
+  top: 7px;
+  left: 9px;
+  background-color: #fff;
+  padding: 8px 10px;
+  border-radius: 100px;
+  font-weight: 400;
+font-size: 16px;
+line-height: 105.5%;
+  .flag{
+    display: inline;
+    margin-right: 10px;
+    background: rgb(33, 155, 33);
+border-radius: 14px;
+width: 20px;
+height: 20px;
+
+  }
+  .flag_img{
+    margin-right: 10px;
+border-radius: 14px;
+background-size:cover ;
+width: 20px;
+height: 20px;
+background-position: center;
+  }
+}
+}
+.private-center-information{
+  padding: 80px 0px ;
+  min-height: 1300px;
 
   img {
     width: 100%;
@@ -12,12 +108,12 @@
     border: 0.970037px solid #E8E8E8;
     border-radius: 97.0037px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-
+   width: 100%;
     .btn{
-      font-size: 14px !important;
-      padding: 6px 4px 6px 20px;
+      font-size: 14px ;
+      padding: 6px 4px 6px 25px;
       height: 34px;
       background: #E7E2FF;
 border-radius: 23px;
@@ -25,5 +121,78 @@ display: flex;
 align-items: center;
 justify-content: flex-start;  }
   }
+  .center_logo{
+    .input{
+      border: 1px solid #6246EA !important;
+      svg{
+        margin-left: 5px;
+      }
+    }
+  }
+.center_link{
+position: relative;
+    direction: ltr;
+label{
+  direction: rtl;
+}
+.input_link{
+  padding-left: 125px;
+  &::placeholder{
+    font-size: 15px !important;
+  }
+}
+  span{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 105.5%;
+position: absolute;
+left: 20px;
+color: black;
+top:64% !important;
+z-index: 4;
+  }
+}
+textarea{
+  padding-top: 20px !important;
+  min-height: 90px;
+  border-radius: 20px !important;
+}
+}
 
+
+
+@media (max-width: 375px) {
+  .form_info{
+    .nav-tabs{
+      width: 100% !important;
+      height: 50px;
+      background: #FFFFFF;
+      border: 0.970037px solid #E8E8E8;
+      border-radius: 97.0037px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      .nav-item {
+        .btn_info{
+          width: auto !important;
+        }
+        .btn_info_center{
+          width: auto !important;
+        }
+        .btn{
+          font-size: 10px !important;
+          padding: 6px 4px 6px 20px;
+          height: 34px;
+          background: #E7E2FF;
+    border-radius: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  }
+      }
+    }
+  }
 }
